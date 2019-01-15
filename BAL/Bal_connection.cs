@@ -1,0 +1,59 @@
+﻿
+using DAL;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using PmsEntity;
+using System.Data;
+
+namespace BAL
+{
+    public class Bal_connection
+    {
+        Dal_connection dal = new Dal_connection();
+
+        public DataSet dashboard_count()
+        {
+            return dal.dashboard_count();
+        }
+
+       //subject_enty subenty = new subject_enty();
+
+
+        //public int langes_insert(string language,string  experties_lvl,int Createdby)
+        //{
+        //return dal.langes_insert(language, experties_lvl, Createdby);
+        //    }
+
+
+        public DataTable GetEmpLagByEmpId(int empid)
+        {
+            return dal.GetEmpLagByEmpId(empid);
+        }
+        public  int langes_insert(subject_enty entty)
+        {
+            return dal.langes_insert(entty);
+        }
+        public object EmpSequenceId()
+        {
+            return dal.EmpSequenceId();
+        }
+        //public int Delete_Lang(int sno,int empId)
+
+        //{
+        //    return dal.Delete_Lang(sno,empId);
+        //}
+        public DataSet Getempedit(int empid)
+        {
+            return dal.Getempedit(empid);
+        }
+        public int empudate(Employee_entity empenty,int empid)
+        {
+            return dal.empudate(empenty,empid);
+        }
+    }
+
+    
+}

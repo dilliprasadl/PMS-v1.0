@@ -1,0 +1,373 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Newprocess.master.cs" Inherits="PMS1.Newprocess" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   
+    <title></title>
+    <style>
+    .left{
+        float:left;
+    }
+        .right {
+            float: right;
+        }
+	body {
+		font-family: verdana;
+		background-color: #eee;
+		padding: 50px;
+		}
+		
+	.welcome h1 {
+		background: linear-gradient(black 20%,darkgreen 80%);
+		width: 100%;
+		padding-top: 35px;
+		color: #fff;
+		text-align: center;
+		height:80px;
+		}
+	.welcome{
+	
+		width: 100%;
+		color: darkred;
+		text-align: right;
+	}
+
+		
+	/* rules for navigation menu */
+	/* ========================================== */
+	
+	ul#navmenu {
+		width: 100%;
+		margin: 0px auto;
+
+	}
+
+	ul#navmenu, ul.sub1, ul.sub2 {
+		list-style-type: none;
+		font-size: 9pt;
+		}
+		
+	ul#navmenu li {
+		width: 125px;
+		text-align: center;
+		position: relative;
+		float: left;
+		margin-right: 4px;
+		}
+		
+	ul#navmenu a {
+		text-decoration: none;
+		display: block;
+		width: 100%;
+		height: 25px;
+		line-height: 25px;
+		background-color: #FFF;
+		border: 1px solid #CCC;
+		border-radius: 5px;
+		}
+		
+	ul#navmenu .sub1 li {
+		}
+		
+	ul#navmenu .sub1 a {
+		margin-top: 5px;
+		}
+		
+	ul#navmenu .sub2 a {
+		margin-left: 3px;
+		}
+		
+	ul#navmenu li:hover > a {
+		background-color: #CFC;
+		}
+		
+	ul#navmenu li:hover a:hover {
+		background-color: black;
+		color:white;
+		}
+		
+	ul#navmenu ul.sub1 {
+		display: none;
+		position: absolute;
+		top: 26px;
+		left: 0px;
+		}
+		
+	ul#navmenu ul.sub2 {
+		display: none;
+		position: absolute;
+		top: 0px;
+		left: 126px;
+		}
+		
+	ul#navmenu li:hover .sub1 {
+		display: block;
+		}
+		
+	ul#navmenu .sub1 li:hover .sub2 {
+		display: block;
+		}
+	.form-control {
+		 height:25px;
+  		 border-right: 0;
+   		 padding-left: 50px;
+   		 border: 1px solid rgba(221, 226, 232, 0.49);
+		}
+	.input-group-btn button {
+   		 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+   		 color: white;
+   		 margin-bottom: 0 
+		 
+		}
+		
+	.darrow {
+		font-size: 11pt;
+		position: absolute;
+		top: 5px;
+		right: 4px;
+		}
+	.rarrow {
+		font-size: 13pt;
+		position: absolute;
+		top: 6px;
+		right: 4px;
+		}
+	.btn{
+		background:linear-gradient(black 20% , darkred 80%);
+		color:white;
+	}
+.fileUpload{
+	
+	width: 100%;
+	padding: 25px 25px 25px 30px;
+	color: blue;
+	text-align: left;
+	height:108px;
+
+}
+.fileUpload li{
+	color: black;
+
+}
+
+.data{
+	
+	margin-top:10px;
+	text-align:center;
+	height:100%;
+	color:#483D8B;
+	width:100%;
+	
+	
+}
+/*.footer{
+    text-align:center;
+    bottom:0;
+    position:relative;
+    background-color:#483D8B;
+    color:#fff;
+    padding:10px;
+    width:100%;
+    }*/
+
+
+
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" ID="srptmngr"></asp:ScriptManager>
+        
+    <div class="welcome">
+    <h1>Pipeline Management System</h1>
+      
+        </div>
+    <div style="display:block; margin-bottom:10px; height:40px;">
+           <div class="left"> 
+       <%-- <ul id="navmenu">
+	<li><a href="home.aspx">Home</a></li>
+	<li runat="server" id="liprocess" visible="false"><a href="#">Process</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			<li><a href="newclientprocess.aspx">New Process</a></li>
+			<li><a href="viewprocess.aspx">View Process</a></li>
+		</ul>
+	</li>
+            <li runat="server" id="liorders" visible="false"><a href="#">Orders</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			<li><a href="New_orders.aspx">New Orders</a></li>
+			<li><a href="Vieworders.aspx">View Orders</a></li>
+		</ul>
+	</li>
+            <li runat="server" id="liEmployee" visible="false"><a href="#">Employee</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			<li><a href="Newemployee.aspx">New Employee</a></li>
+			<li><a href="viewemployee.aspx">View Employee</a></li>
+		</ul>
+	</li>
+        <li runat="server" id="liLender" visible="false"><a href="#">Lender</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			<li><a href="Lender_registeration.aspx">New Lender</a></li>
+			<li><a href="Lender_view.aspx">View Lender</a></li>
+		</ul>
+	</li>
+             <li runat="server" id="liviewOrders" visible="false"><a href="#">Orders</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+             <li><a href="New_orders.aspx">New Orders</a></li>
+			<li><a href="Vieworders.aspx">view Order</a></li>
+            </ul>
+
+			
+	</li>
+              <li runat="server" id="lieditorders1" visible="false"><a href="#"> Orders</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+              <li><a href="New_orders.aspx">New Orders</a></li>
+				<li><a href="Vieworders.aspx">View Orders</a></li>
+            </ul>
+
+			
+	</li>
+             <li runat="server" id="liassignreassign" visible="false"><a href="#">Assign reassign</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+            <li><a href="unassigned.aspx">Assign</a></li>
+ <li><a href="unassigned.aspx">Reassign</a></li>          
+              <li><a href="#">Priority flag</a></li>
+            </ul>
+
+			
+	</li>
+            
+             <li runat="server" id="liStatus" visible="false"><a href="#">Status</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			<li><a href="#">What is the status</a></li>
+            <li><a href="#">Assigned</a></li>
+              <li><a href="unassigned.aspx">unassigned</a></li>
+            </ul>
+
+			
+	</li>
+
+
+	<li runat="server" id="liTransactions" visible="false"><a href="#">Transactions</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			<li><a href="mypipeline.aspx">My Pipeline</a></li>
+			<li><a href="teampipeline.aspx">Team Pipeline</a></li>
+			<li><a href="unassigned.aspx">Un Asigned</a></li>
+			<li><a href="#">New</a><span class="rarrow">&#9654;</span>
+				<ul class="sub2">
+					<li><a href="singleupload.aspx">Single Upload</a></li>
+					<li><a href="Multipuleupload.aspx">Multiple Upload</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+            <li runat="server" id="litranc2" visible="false"><a href="#">Team pipeline</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			
+			<li><a href="teampipeline.aspx">Team Pipeline</a></li>
+				</ul>
+	</li>
+            <li runat="server" id="limypipeline" visible="false"><a href="#">My pipeline</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			<li><a href="mypipeline.aspx">My Pipeline</a></li>
+			
+				</ul>
+	</li>
+            <li runat="server" id="liPipelines" visible="false"><a href="#">Pipelines</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+
+			<li><a href="mypipeline.aspx">My Pipeline</a></li>
+			<li><a href="teampipeline.aspx">Team Pipeline</a></li>
+		
+				</ul>
+	</li>
+
+            <li runat="server" id="liAdmin" visible="false"><a href="#">Admin</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			<li><a href="Resetpassword.aspx">Reset Password</a></li>
+			<li><a href="Assignrole.aspx">Assign Role</a></li>
+			<li><a href="Createrole.aspx">Create Role</a></li>
+
+
+		</ul>
+	</li>
+	<li><a href="#">Summary</a></li>
+            </ul>--%>
+               <ul id="navmenu">
+	<li><a href="home.aspx">Home</a></li>
+	<%--<li><a href="#">Orders</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			<li><a href="New_orders.aspx">New Orders</a></li>
+			<li><a href="Vieworders.aspx">View Orders</a></li>
+		</ul>
+	</li>--%>
+	<li><a href="#">Employee</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			<li><a href="newEmployee.aspx">New Employee</a></li>
+			<li><a href="viewEmployee.aspx">View Employee</a></li>
+           
+		</ul>
+	</li>
+	<li><a href="#">Lenders</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			<li><a href="Lender_registeration.aspx">New Lenders</a></li>
+			<li><a href="Lender_view.aspx">View Lenders</a></li>
+		</ul>
+	</li>
+                   <li><a href="#">Admin</a><span class="darrow">&#9660;</span>
+                       <ul class="sub1">
+                           <li><a href="Resetpassword.aspx">Reset Password</a></li>
+			           <li><a href="Assignrole.aspx">Assign Role</a></li>
+			            <li><a href="Createrole.aspx">Create Role</a></li>
+                         
+                           </ul>
+                       </li>
+
+	<li><a href="#">Transactions</a><span class="darrow">&#9660;</span>
+		<ul class="sub1">
+			<li><a href="myPipeline.aspx">My Pipeline</a></li>
+			<li><a href="teamPipeline.aspx">Team Pipeline</a></li>
+			<li><a href="unAssigned.aspx">Un Asigned</a></li>
+			<li><a href="#">Orders</a><span class="rarrow">&#9654;</span>
+				<ul class="sub2">
+					<li><a href="singleupload.aspx">Single Upload</a></li>
+                    <li><a href="Multipuleupload.aspx">Multiple Upload</a></li>
+                   
+		
+		</ul>
+	</li>
+			
+		</ul>
+	
+                    
+</ul>
+
+
+           </div>
+   <div class="right">
+        Welcome To <span></span> <strong> <asp:Label ID="username" runat="server"></asp:Label> </strong>
+        <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Button1_Click" />
+   </div>
+        </div>
+    <div style="display:block;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+    </div>
+
+     <%--   <div class="footer">
+           <b> Sachetassolutions</b>
+        </div>
+        --%>
+    
+
+    </form>
+
+    
+</body>
+</html>
