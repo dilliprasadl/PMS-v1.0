@@ -13,11 +13,20 @@ namespace PMS1
         {
             if (!IsPostBack)
             {
-                username.Text = Session["user_Name"].ToString();
+                try
+                {
+                    username.Text = Session["user_Name"].ToString();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex);
+                }
+                
                 //get_menu();
+
             }
         }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("Login.aspx");

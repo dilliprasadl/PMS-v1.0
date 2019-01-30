@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using BAL;
+using System.IO;
+using System.Text;
 
 namespace PMS1
 {
@@ -36,7 +39,7 @@ namespace PMS1
             }
             catch (Exception ex)
             {
-                throw ex;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Exception : " + ex + "');", true);
 
             }
             finally
@@ -45,5 +48,9 @@ namespace PMS1
             }
         }
 
+        protected void GridView1_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Newprocess.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="Newemployee.aspx.cs" Inherits="PMS1.Newemployee" %>
+﻿<%@ Page Title="PMS | New Employee" Language="C#" MasterPageFile="~/Newprocess.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="Newemployee.aspx.cs" Inherits="PMS1.Newemployee" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>  
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
     <style>
         [type=checkbox]:checked, [type=checkbox]:not(:checked) {
             position: absolute;
@@ -113,6 +113,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <asp:UpdatePanel ID="updatepanl" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div class="card card-outline-info" style="width: 1300px;">

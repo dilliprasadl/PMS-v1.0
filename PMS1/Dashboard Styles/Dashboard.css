@@ -1,0 +1,30 @@
+﻿.panel {
+    background-color: #fff;
+    border: 2px solid transparent;
+    border-radius: 4px; 
+    float:left;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    min-height:50px;
+    margin-right:70px;
+    width:200px;
+    margin:35px;
+}
+.panel-body {
+    text-align: center ;
+    
+}
+.panel-primary {
+    border-color: #135893;
+}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: white;
+    background-color: darkolivegreen;
+    border-color: black;
+
+}
+    

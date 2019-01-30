@@ -118,19 +118,16 @@ namespace PMS1
 
 
 
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Successfully Assigne!');window.location.href = 'unassigned.aspx'", true);
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Successfully Assigned !');window.location.href = 'unassigned.aspx'", true);
 
                         }
 
-                        else
-                        {
-                           // ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Plese select atleast one row!');", true);
-                        }
+                        
                     }
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Plese select atleast one row!');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Plese select atleast one Order!');", true);
                 }
 
 

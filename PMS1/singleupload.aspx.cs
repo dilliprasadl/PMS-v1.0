@@ -21,26 +21,7 @@ namespace PMS1
             {
                 SqlConnection con = new SqlConnection("Data Source=DESKTOP-RIBI1U4\\SQLEXPRESS;Initial Catalog=PMS v1.0;Integrated Security=True");
                 {
-                    /* con.Open();
-                     SqlCommand cmd= new SqlCommand("insert into reg values(@Username,@Email,@Password,@ConfirmPassword");
-                     cmd.Parameters.AddWithValue("Username", txtuname.Text);
-                     cmd.Parameters.AddWithValue("Email", txtEmail.Text);
-                     cmd.Parameters.AddWithValue("Password", txtPwd.Text);
-                     cmd.ExecuteNonQuery();
-                     txtuname.Text = "";
-                     txtEmail.Text = "";
-                     txtPwd.Text = "";
-                     txtuname.Focus();*/
-                    //SqlCommand com = new SqlCommand("insert_singleupload", con);
-                    //com.CommandType = System.Data.CommandType.StoredProcedure;
-                    //com.Parameters.AddWithValue("@Lendername", DropDownList1.SelectedItem.ToString());
-                    //com.Parameters.AddWithValue("@Branchname", txtbname.Text);
-                    //com.Parameters.AddWithValue("@Orderreceiveddate", txtord.Text);
-                    //com.Parameters.AddWithValue("@Oredrreceivedtime", txtort.Text);
-                    //com.Parameters.AddWithValue("@LAreferenceno", txtrn.Text);
-                    //com.Parameters.AddWithValue("@LAname", txtlname.Text);
-                    //com.Parameters.AddWithValue("@CAcontactdetailes", txtcd.Text);
-                    //com.Parameters.AddWithValue("@CAadditionaldetailes", txtad.Text);
+                    
                     SqlCommand com = new SqlCommand("insert_singleupload", con);
                     com.CommandType = System.Data.CommandType.StoredProcedure;
 

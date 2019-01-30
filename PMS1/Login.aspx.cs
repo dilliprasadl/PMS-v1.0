@@ -45,13 +45,13 @@ namespace PMS1
                 Session["user_Name"] = UserName;
                 Session["User_id"] = user_id;
                 Session["Roleid"] = Role_id;
-                Response.Redirect("Dashboard.aspx");
+                Response.Redirect("home.aspx");
 
              
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' invalid username and password');window.location.href = 'Login.aspx'", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Invalid username and password');window.location.href = 'Login.aspx'", true);
             }
         }
 

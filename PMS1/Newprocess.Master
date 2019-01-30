@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
    
-    <title></title>
-    <style>
+<title></title>
+       		 <style>
     .left{
         float:left;
     }
@@ -176,20 +176,21 @@
 
     </style>
 
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+
+
+<asp:ContentPlaceHolder ID="head" runat="server">
+</asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager runat="server" ID="srptmngr"></asp:ScriptManager>
+    <asp:ScriptManager runat="server" ID="srptmngr"></asp:ScriptManager>
         
     <div class="welcome">
-    <h1>Pipeline Management System</h1>
-      
-        </div>
+    <h1>Pipeline Management System</h1>  
+    </div>
     <div style="display:block; margin-bottom:10px; height:40px;">
-           <div class="left"> 
-       <%-- <ul id="navmenu">
+    <div class="left"> 
+    <%-- <ul id="navmenu">
 	<li><a href="home.aspx">Home</a></li>
 	<li runat="server" id="liprocess" visible="false"><a href="#">Process</a><span class="darrow">&#9660;</span>
 		<ul class="sub1">
@@ -297,77 +298,62 @@
 	</li>
 	<li><a href="#">Summary</a></li>
             </ul>--%>
-               <ul id="navmenu">
-	<li><a href="home.aspx">Home</a></li>
+    <ul id="navmenu">
+	    <li><a href="home.aspx">Home</a></li>
 	<%--<li><a href="#">Orders</a><span class="darrow">&#9660;</span>
 		<ul class="sub1">
 			<li><a href="New_orders.aspx">New Orders</a></li>
 			<li><a href="Vieworders.aspx">View Orders</a></li>
 		</ul>
 	</li>--%>
-	<li><a href="#">Employee</a><span class="darrow">&#9660;</span>
-		<ul class="sub1">
-			<li><a href="newEmployee.aspx">New Employee</a></li>
-			<li><a href="viewEmployee.aspx">View Employee</a></li>
-           
-		</ul>
+	    <li><a href="#">New</a><span class="darrow">&#9660;</span>
+    <ul class="sub1">
+		<li><a href="Newemployee.aspx">New Employee</a></li>
+    	<li><a href="Lender_registeration.aspx">New Lender</a></li>
+        <li><a href="Createrole.aspx">New Role</a></li>
+        <li><a href="#">Orders</a><span class="rarrow">&#9654;</span>
+	<ul class="sub2">
+		<li><a href="singleupload.aspx">Single Upload</a></li>
+        <li><a href="Multipuleupload.aspx">Multiple Upload</a></li>
+    </ul>
+        </li>
+	</ul>
 	</li>
-	<li><a href="#">Lenders</a><span class="darrow">&#9660;</span>
-		<ul class="sub1">
-			<li><a href="Lender_registeration.aspx">New Lenders</a></li>
-			<li><a href="Lender_view.aspx">View Lenders</a></li>
-		</ul>
+	    <li><a href="#">Update</a><span class="darrow">&#9660;</span>
+	<ul class="sub1">
+		<li><a href="viewemployee.aspx">Update Employees</a></li>
+		<li><a href="Lender_view.aspx">Update Lenders</a></li>
+	</ul>
 	</li>
-                   <li><a href="#">Admin</a><span class="darrow">&#9660;</span>
-                       <ul class="sub1">
-                           <li><a href="Resetpassword.aspx">Reset Password</a></li>
-			           <li><a href="Assignrole.aspx">Assign Role</a></li>
-			            <li><a href="Createrole.aspx">Create Role</a></li>
-                         
-                           </ul>
-                       </li>
+        <li><a href="#">View</a><span class="darrow">&#9660;</span>
+    <ul class="sub1">
+        <li><a href="viewemployee.aspx">View Employees</a></li>
+	    <li><a href="unassigned.aspx">Unassigned Orders</a></li>
+	    <li><a href="Lender_view.aspx">View Lenders</a></li>
+    </ul>
+       </li>
 
-	<li><a href="#">Transactions</a><span class="darrow">&#9660;</span>
-		<ul class="sub1">
-			<li><a href="myPipeline.aspx">My Pipeline</a></li>
-			<li><a href="teamPipeline.aspx">Team Pipeline</a></li>
-			<li><a href="unAssigned.aspx">Un Asigned</a></li>
-			<li><a href="#">Orders</a><span class="rarrow">&#9654;</span>
-				<ul class="sub2">
-					<li><a href="singleupload.aspx">Single Upload</a></li>
-                    <li><a href="Multipuleupload.aspx">Multiple Upload</a></li>
-                   
-		
-		</ul>
-	</li>
+	   <li><a href="#">Pipeline</a><span class="darrow">&#9660;</span>
+	<ul class="sub1">
+	    <li><a href="myPipeline.aspx">My Pipeline</a></li>
+		<li><a href="teamPipeline.aspx">Team Pipeline</a></li>
+	</ul>
+	    </li>
 			
-		</ul>
-	
-                    
-</ul>
-
-
-           </div>
-   <div class="right">
-        Welcome To <span></span> <strong> <asp:Label ID="username" runat="server"></asp:Label> </strong>
+	</ul>
+</div>
+<div class="right">
+        Welcome <span></span> <strong> <asp:Label ID="username" runat="server"></asp:Label> </strong>
         <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Button1_Click" />
-   </div>
-        </div>
-    <div style="display:block;">
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-
+</div>
+</div>
+<div style="display:block;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
     </div>
-
      <%--   <div class="footer">
            <b> Sachetassolutions</b>
         </div>
         --%>
-    
-
     </form>
-
-    
 </body>
 </html>

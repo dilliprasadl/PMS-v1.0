@@ -102,6 +102,7 @@
   <ItemGroup>
     <Content Include="Calendar\calendar_blank.png" />
     <Content Include="Calendar\x_office_calendar.png" />
+    <Content Include="Dashboard Styles\Dashboard.css" />
     <Content Include="Lender_registeration.aspx" />
     <Content Include="Lender_view.aspx" />
     <Content Include="Createrole.aspx" />
@@ -130,7 +131,6 @@
     </Content>
     <Content Include="Newprocess.Master" />
     <Content Include="teampipeline.aspx" />
-    <Content Include="text1.aspx" />
     <Content Include="unassigned.aspx" />
     <Content Include="viewemployee.aspx" />
     <Content Include="Vieworders.aspx" />
@@ -144,7 +144,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Login.aspx" />
-    <Content Include="Registation.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Web.config">
@@ -272,13 +271,6 @@
       <DependentUpon>Newprocess.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registation.aspx.cs">
-      <DependentUpon>Registation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Registation.aspx.designer.cs">
-      <DependentUpon>Registation.aspx</DependentUpon>
-    </Compile>
     <Compile Include="SqlConnClass.cs" />
     <Compile Include="teampipeline.aspx.cs">
       <DependentUpon>teampipeline.aspx</DependentUpon>
@@ -286,13 +278,6 @@
     </Compile>
     <Compile Include="teampipeline.aspx.designer.cs">
       <DependentUpon>teampipeline.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="text1.aspx.cs">
-      <DependentUpon>text1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="text1.aspx.designer.cs">
-      <DependentUpon>text1.aspx</DependentUpon>
     </Compile>
     <Compile Include="unassigned.aspx.cs">
       <DependentUpon>unassigned.aspx</DependentUpon>

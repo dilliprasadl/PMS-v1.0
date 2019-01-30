@@ -71,41 +71,26 @@ namespace PMS1
                         txtpassno.Text = dtst.Tables[0].Rows[0]["PassportNo"].ToString();
                         txtuname.Text = dtst.Tables[0].Rows[0]["UserName"].ToString();
                         txtpwd.Text = dtst.Tables[0].Rows[0]["password"].ToString();
+                        txtraline1.Text = dtst.Tables[0].Rows[0]["RAddressLine1"].ToString();
+                        txtraline2.Text = dtst.Tables[0].Rows[0]["RAddressLine2"].ToString();
+                        txtrcity.Text = dtst.Tables[0].Rows[0]["RCity"].ToString();
+                        txtrstate.Text = dtst.Tables[0].Rows[0]["RState"].ToString();
+                        txtrzcode.Text = dtst.Tables[0].Rows[0]["RZipCode"].ToString();
+                        txtpaline1.Text = dtst.Tables[0].Rows[0]["PAddressLine1"].ToString();
+                        txtpaline2.Text = dtst.Tables[0].Rows[0]["PAddressLine2"].ToString();
+                        txtpcity.Text = dtst.Tables[0].Rows[0]["PCity"].ToString();
+                        txtpstate.Text = dtst.Tables[0].Rows[0]["PState"].ToString();
+                        txtpzcode.Text = dtst.Tables[0].Rows[0]["PZipCode"].ToString();
+                        txtoaline1.Text = dtst.Tables[0].Rows[0]["OAddressLine1"].ToString();
+                        txtoaline2.Text = dtst.Tables[0].Rows[0]["OAddressLine2"].ToString();
+                        txtocity.Text = dtst.Tables[0].Rows[0]["OCity"].ToString();
+                        txtostate.Text = dtst.Tables[0].Rows[0]["OState"].ToString();
+                        txtozcode.Text = dtst.Tables[0].Rows[0]["OZipCode"].ToString();
 
-                // txtlknown.Text = dtst.Tables[0].Rows[0]["LanguageKnown"].ToString();
+                        gv1.DataSource = dtst.Tables[1];
+                        gv1.DataBind();
 
-                //rblelevel.SelectedItem.Text = dtst.Tables[0].Rows[0]["ExpertiseLevel"].ToString();
-                //ViewState["photoupload"] = dtst.Tables[0].Rows[0]["photo"].ToString();
-                //ViewState["fileupload"] = dtst.Tables[0].Rows[0]["Otherfiles"].ToString();
-
-               
-                  
-             
-                txtraline1.Text = dtst.Tables[0].Rows[0]["RAddressLine1"].ToString();
-                txtraline2.Text = dtst.Tables[0].Rows[0]["RAddressLine2"].ToString();
-                txtrcity.Text = dtst.Tables[0].Rows[0]["RCity"].ToString();
-                txtrstate.Text = dtst.Tables[0].Rows[0]["RState"].ToString();
-                txtrzcode.Text = dtst.Tables[0].Rows[0]["RZipCode"].ToString();
-                txtpaline1.Text = dtst.Tables[0].Rows[0]["PAddressLine1"].ToString();
-                txtpaline2.Text = dtst.Tables[0].Rows[0]["PAddressLine2"].ToString();
-                txtpcity.Text = dtst.Tables[0].Rows[0]["PCity"].ToString();
-                txtpstate.Text = dtst.Tables[0].Rows[0]["PState"].ToString();
-                txtpzcode.Text = dtst.Tables[0].Rows[0]["PZipCode"].ToString();
-                txtoaline1.Text = dtst.Tables[0].Rows[0]["OAddressLine1"].ToString();
-                txtoaline2.Text = dtst.Tables[0].Rows[0]["OAddressLine2"].ToString();
-                txtocity.Text = dtst.Tables[0].Rows[0]["OCity"].ToString();
-                txtostate.Text = dtst.Tables[0].Rows[0]["OState"].ToString();
-                txtozcode.Text = dtst.Tables[0].Rows[0]["OZipCode"].ToString();
-
-                gv1.DataSource = dtst.Tables[1];
-                gv1.DataBind();
-
-                //                    com.Parameters.AddWithValue("@photo", ((ViewState["photoupload"].ToString() == null || ViewState["photoupload"].ToString() == "") ? "-" : ViewState["photoupload"].ToString()));
-                //                    com.Parameters.AddWithValue("@Otherfiles", ((ViewState["fileupload"].ToString() == null || ViewState["fileupload"].ToString() == "") ? "-" : ViewState["fileupload"].ToString()));
-
-
-
-            }
+                    }
 
         }
       
@@ -116,7 +101,6 @@ namespace PMS1
 
                 upload_photo();
                 uploadfile();
-                //gvdelet();
 
 
 
@@ -140,8 +124,6 @@ namespace PMS1
                     com.Parameters.AddWithValue("@PassportNo", txtpassno.Text);
                     com.Parameters.AddWithValue("@UserName", txtuname.Text);
                     com.Parameters.AddWithValue("@password", txtpwd.Text);
-                    //com.Parameters.AddWithValue("@LanguageKnown", txtlknown.Text);
-                    //com.Parameters.AddWithValue("@ExpertiseLevel", rblelevel.SelectedItem.Text);
                     com.Parameters.AddWithValue("@photo", ((ViewState["photoupload"].ToString() == null || ViewState["photoupload"].ToString() == "") ? "-" : ViewState["photoupload"].ToString()));
                     com.Parameters.AddWithValue("@Otherfiles", ((ViewState["fileupload"].ToString() == null || ViewState["fileupload"].ToString() == "" ) ? "-" : ViewState["fileupload"].ToString()));
                     com.Parameters.AddWithValue("@RAddressLine1", txtraline1.Text);
@@ -195,10 +177,6 @@ namespace PMS1
             {
                 try
                 {
-                    // if (uploadphoto.PostedFile.ContentType == ".jpeg" || uploadphoto.PostedFile.ContentType == ".jpg" || uploadphoto.PostedFile.ContentType == ".png")
-                    // {
-                    //if (uploadphoto.PostedFile.ContentLength < 102400)
-                    /// {
                     string photoupload = Path.GetFileName(uploadphoto.FileName);
 
                     string photo_upload = DateTime.Now.ToString("yyyyMMddHHmmssfff") + photoupload ;
@@ -209,23 +187,8 @@ namespace PMS1
 
 
                     string s = "1";
-                    //  lblmessage.Text = "Upload status: File uploaded!";
-                    // }
-                    // else
-                    // {
-                    //  ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' The file has to be less than 100 kb!');", true);
-                    // }
-                    //  }
-
-
-                    // lblmessage.Text = "Upload status: The file has to be less than 100 kb!";
-
-                    // else
-                    //  lblmessage.Text = "Upload status: Only JPEG files are accepted!";
-                    // {
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Only doc files are accepted!');", true);
-                    //  }
-
+                    
                 }
                 catch (Exception ex)
                 {
@@ -241,10 +204,6 @@ namespace PMS1
             {
                 try
                 {
-                    // if (Uploadofiles.PostedFile.ContentType == ".doc" || Uploadofiles.PostedFile.ContentType == ".docx")
-                    // {
-                    //    if (Uploadofiles.PostedFile.ContentLength < 102400)
-                    //    {
                     string file_upload = Path.GetFileName(Uploadofiles.FileName);
 
                     string upload_file = DateTime.Now.ToString("yyyyMMddHHmmssfff") + file_upload ;
@@ -252,21 +211,6 @@ namespace PMS1
                     Uploadofiles.SaveAs(Server.MapPath("~/otherfileupload/") + upload_file);
 
                     string s = "2";
-                    // lblmessage.Text = "Upload status: File uploaded!";
-                    //ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' The file has to be less than 100 kb!');", true);
-
-                    //    }
-                    //    else
-                    //    {
-                    //        ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' The file has to be less than 100 kb!');", true);
-                    //    }
-                    //       // lblmessage.Text = "Upload status: The file has to be less than 100 kb!";
-                    // }
-                    //  else
-                    //  //  lblmessage.Text = "Upload status: Only JPEG files are accepted!";
-                    // {
-                    // ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Only JPEG files are accepted!');", true);
-                    //  }
                 }
                 catch (Exception ex)
                 {
@@ -275,17 +219,7 @@ namespace PMS1
             }
 
         }
-        //protected void imagebutton_Click(object sender, EventArgs e)
-        //{
-        //    Calendar1.Visible = true;
-
-        //}
-
-        //protected void Calendar1_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    txtdob.Text = Calendar1.SelectedDate.ToShortDateString();
-        //    Calendar1.Visible = false;
-        //}
+        
 
         private void Bindlang()
         {
@@ -305,19 +239,7 @@ namespace PMS1
                 gv1.DataSource = ds;
                 gv1.DataBind();
 
-               // DataTable clear = new DataTable();
-
-               // clear = null;
-
-               //gv1.DataSource = clear;
-               // gv1.DataBind();
-
-               // if (ds.Rows.Count > 0)
-               // {
-               //     gv1.DataSource = ds;
-               //     gv1.DataBind();
-               //     con.Close();
-               // }
+               
                 
 
             }
@@ -344,28 +266,15 @@ namespace PMS1
         {
             try
             {
-
-                
-                // int result = bal.langes_insert(txtlknown.Text,rblelevel.SelectedItem.ToString(),Convert.ToInt32(Session["User_id"].ToString()));
-
                 entty.language = txtlknown.Text;
                 entty.experties = rblelevel.SelectedItem.ToString();
                 entty.userid = Convert.ToInt32(Session["User_id"]);
                 entty.Empsequence = Convert.ToInt32(ViewState["empseque"].ToString());
                 int result = bal.langes_insert(entty);
-                
-                //SqlCommand com = new SqlCommand("insert_lang", con);
-                //com.CommandType = System.Data.CommandType.StoredProcedure;
-                //com.Parameters.AddWithValue("@languagename", txtlknown.Text);
-                //com.Parameters.AddWithValue("@Expertise", rblelevel.Text);
-                //com.Parameters.AddWithValue("@Createdby", Session["User_id"].ToString());
-                //con.Open();
-                //int output = com.ExecuteNonQuery();
-                //con.Close();
-                if (result==1)
-                {
+              if (result==1)
+              {
                     Bindlang();
-                }
+              }
 
                
             }
@@ -375,48 +284,6 @@ namespace PMS1
                 throw ex;
             }
         }
-
-        
-
-        //protected void gv1_RowCommand(object sender, GridViewCommandEventArgs e)
-        //{
-        //    try
-        //    {
-                
-        //        if (e.CommandName.ToString() == "delete")
-        //        {
-                    
-
-        //            string[] splitdata = e.CommandArgument.ToString().Split('^');
-
-        //            int sno = Convert.ToInt16(splitdata[0].ToString());
-        //            int empId = Convert.ToInt16(splitdata[1].ToString());
-
-
-        //            int deoutpt = bal.Delete_Lang(sno,empId);
-
-                   
-        //            if (deoutpt > 0)
-        //            {
-        //                ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Deleted Successfully !');", true);
-        //                Bindlang();
-        //            }
-
-
-        //            else
-        //            {
-        //                ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Failed !');", true);
-        //            }
-
-
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
 
         protected void btn_update_Click(object sender, EventArgs e)
         {
