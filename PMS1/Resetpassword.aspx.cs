@@ -63,7 +63,7 @@ namespace PMS1
 
                 con.Close();
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Successfully restted password!');window.location.href = 'Resetpassword.aspx'", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Successfully resetted password!');window.location.href = 'Resetpassword.aspx'", true);
             }
             catch (Exception ex)
             {

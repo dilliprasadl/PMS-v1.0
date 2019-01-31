@@ -45,11 +45,6 @@ namespace PMS1
 
                 Grd_downlod.DataSource = ds;
                 Grd_downlod.DataBind();
-              //  Grd_downlod.Visible = false;
-
-
-                //ViewState["dirState"] = ds;
-                //ViewState["sortdr"] = "Asc";
 
             }
             catch (Exception ex)
@@ -242,6 +237,12 @@ namespace PMS1
                     int isact = Convert.ToInt16(splitdata[1].ToString());
 
                     Response.Redirect("Newemployee.aspx?empid=" + empid, false);
+                }
+                else if (e.CommandName.ToString()=="ResetPassword")
+                {
+                    string[] splitdata = e.CommandArgument.ToString().Split(',');
+                    int empid = Convert.ToInt16(splitdata[0].ToString());
+                    Response.Redirect("Resetpassword.aspx?employeeid=" + empid, false);
                 }
             }
             catch(Exception ex)

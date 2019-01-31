@@ -43,30 +43,26 @@
                 <th>S No</th>
                 <th>Status</th>
                 <th>First Name</th>
-              <%--  <th>LastName</th>--%>
                 <th>Gender</th>
                 <th>Mobile Number</th>
                 <th>Alternate Number</th>
                 <th>EmailId</th>
-               <%-- <th>AlternateEmail</th>--%>
                 <th>Status Action</th>
                 <th>Action to Edit</th>
+               <th>Reset Password</th>
             </tr>
         </thead>
         <tbody>
-
-        
-           
 <asp:Repeater ID="GridView1" runat="server" OnItemCommand="GridView1_ItemCommand">
       <ItemTemplate>
      
       <tr>
           <td>
                <%# Container.ItemIndex+1 %>
-                    <asp:HiddenField runat="server" ID="HiddenField1" Value='<%#Eval("Employeeid") %>' />
+               <asp:HiddenField runat="server" ID="HiddenField1" Value='<%#Eval("Employeeid") %>' />
           </td>
           <td>
-         <asp:Label runat="server" ID="lbid"  Text='<%#Eval("Statuss") %>'></asp:Label>
+              <asp:Label runat="server" ID="lbid"  Text='<%#Eval("Statuss") %>'></asp:Label>
           </td>
           <td>
                 <asp:Label ID="lblfname" runat="server" Text='<%# Eval("firstname") %>'></asp:Label>  
@@ -83,38 +79,32 @@
           <td>
               <asp:Label ID="lbleid" runat="server" Text='<%# Eval("Emailid") %>'></asp:Label>  
           </td>
-       <%--   <td>
-               <asp:Label ID="lblaemail" runat="server" Text='<%# Eval("AlternateEmail") %>'></asp:Label>  
-          </td>--%>
           <td>
                 <asp:LinkButton runat="server" ID="lnkbtn" CommandName="Active" CommandArgument='<%#Eval("Employeeid")+","+Eval("isactive") %>' Text='<%#(Convert.ToInt32(Eval("isactive")))==1?"Click Here Deactivate":"Click To Active" %>'></asp:LinkButton>
           </td>
           <td>
                <asp:LinkButton runat="server" ID="lnkbtnedt" CommandName="ActiontoEdit" CommandArgument='<%#Eval("Employeeid")+","+Eval("isactive") %>' Text="Click to update"></asp:LinkButton>
           </td>
-          
+          <td>
+               <asp:LinkButton runat="server" ID="lblreset" CommandName="ResetPassword" CommandArgument='<%#Eval("Employeeid") %>' Text="ResetPassword"></asp:LinkButton>
+          </td>
       </tr>
-          </ItemTemplate>
-    </asp:Repeater>   
+        </ItemTemplate>
+        </asp:Repeater>   
         </tbody>
     </table> 
     <div style="display:none">
     <asp:GridView ID="Grd_downlod" runat="server" AutoGenerateColumns="False">
       
          <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-      
          <Columns>
-             
+ 
                   <asp:TemplateField HeaderText="S No">
                 <ItemTemplate>
                     <%# Container.DataItemIndex + 1 %>
                     <asp:HiddenField runat="server" ID="hdn_empid" Value='<%#Eval("Employeeid") %>' />
                     </ItemTemplate>
             </asp:TemplateField>
-
-
-  
-
              <asp:TemplateField HeaderText="Status">
                 <ItemTemplate>
                     
@@ -166,8 +156,6 @@
                             </ItemTemplate>  
                         </asp:TemplateField>  
          </Columns>
-
-
     </asp:GridView>
     </div>
 </asp:Content>
