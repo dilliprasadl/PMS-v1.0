@@ -13,13 +13,13 @@ namespace PMS1 {
     public partial class Newemployee {
         
         /// <summary>
-        /// updatepanl control.
+        /// updatepan1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updatepanl;
+        protected global::System.Web.UI.UpdatePanel updatepan1;
         
         /// <summary>
         /// txtfname control.
@@ -31,15 +31,6 @@ namespace PMS1 {
         protected global::System.Web.UI.WebControls.TextBox txtfname;
         
         /// <summary>
-        /// rq1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rq1;
-        
-        /// <summary>
         /// txtlaname control.
         /// </summary>
         /// <remarks>
@@ -47,15 +38,6 @@ namespace PMS1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtlaname;
-        
-        /// <summary>
-        /// rq2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rq2;
         
         /// <summary>
         /// ddlselect control.
@@ -67,15 +49,6 @@ namespace PMS1 {
         protected global::System.Web.UI.WebControls.DropDownList ddlselect;
         
         /// <summary>
-        /// rfvselect control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvselect;
-        
-        /// <summary>
         /// txtdob control.
         /// </summary>
         /// <remarks>
@@ -83,15 +56,6 @@ namespace PMS1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtdob;
-        
-        /// <summary>
-        /// rfb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfb;
         
         /// <summary>
         /// txtmnumber control.
@@ -103,15 +67,6 @@ namespace PMS1 {
         protected global::System.Web.UI.WebControls.TextBox txtmnumber;
         
         /// <summary>
-        /// rfvnumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvnumber;
-        
-        /// <summary>
         /// txtanumber control.
         /// </summary>
         /// <remarks>
@@ -119,15 +74,6 @@ namespace PMS1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtanumber;
-        
-        /// <summary>
-        /// rfvanumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvanumber;
         
         /// <summary>
         /// txtemail control.
@@ -139,15 +85,6 @@ namespace PMS1 {
         protected global::System.Web.UI.WebControls.TextBox txtemail;
         
         /// <summary>
-        /// rfvemail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvemail;
-        
-        /// <summary>
         /// txtaemail control.
         /// </summary>
         /// <remarks>
@@ -155,15 +92,6 @@ namespace PMS1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtaemail;
-        
-        /// <summary>
-        /// rfvaemail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvaemail;
         
         /// <summary>
         /// txtfaname control.
@@ -175,15 +103,6 @@ namespace PMS1 {
         protected global::System.Web.UI.WebControls.TextBox txtfaname;
         
         /// <summary>
-        /// rfvfname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvfname;
-        
-        /// <summary>
         /// txtmoname control.
         /// </summary>
         /// <remarks>
@@ -193,15 +112,6 @@ namespace PMS1 {
         protected global::System.Web.UI.WebControls.TextBox txtmoname;
         
         /// <summary>
-        /// rfvmname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvmname;
-        
-        /// <summary>
         /// txtacno control.
         /// </summary>
         /// <remarks>
@@ -209,15 +119,6 @@ namespace PMS1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtacno;
-        
-        /// <summary>
-        /// rfvacno control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvacno;
         
         /// <summary>
         /// txtpcno control.
@@ -247,15 +148,6 @@ namespace PMS1 {
         protected global::System.Web.UI.WebControls.TextBox txtuname;
         
         /// <summary>
-        /// rfvuname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvuname;
-        
-        /// <summary>
         /// txtpwd control.
         /// </summary>
         /// <remarks>
@@ -265,13 +157,22 @@ namespace PMS1 {
         protected global::System.Web.UI.WebControls.TextBox txtpwd;
         
         /// <summary>
-        /// rfvpwd control.
+        /// uploadphoto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvpwd;
+        protected global::System.Web.UI.WebControls.FileUpload uploadphoto;
+        
+        /// <summary>
+        /// Uploadofiles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload Uploadofiles;
         
         /// <summary>
         /// gv1 control.
@@ -310,240 +211,6 @@ namespace PMS1 {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// uploadphoto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload uploadphoto;
-        
-        /// <summary>
-        /// lblmessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblmessage;
-        
-        /// <summary>
-        /// Uploadofiles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload Uploadofiles;
-        
-        /// <summary>
-        /// ddlrole control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlrole;
-        
-        /// <summary>
-        /// RequiredFieldValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
-        /// <summary>
-        /// lblmessge control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblmessge;
-        
-        /// <summary>
-        /// txtraline1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtraline1;
-        
-        /// <summary>
-        /// rfvline1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvline1;
-        
-        /// <summary>
-        /// txtraline2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtraline2;
-        
-        /// <summary>
-        /// rfvline2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvline2;
-        
-        /// <summary>
-        /// txtrcity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtrcity;
-        
-        /// <summary>
-        /// rfvcity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvcity;
-        
-        /// <summary>
-        /// txtrstate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtrstate;
-        
-        /// <summary>
-        /// rfvstate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvstate;
-        
-        /// <summary>
-        /// txtrzcode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtrzcode;
-        
-        /// <summary>
-        /// rfvcode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvcode;
-        
-        /// <summary>
-        /// txtpaline1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpaline1;
-        
-        /// <summary>
-        /// rfvpline1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvpline1;
-        
-        /// <summary>
-        /// txtpaline2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpaline2;
-        
-        /// <summary>
-        /// rfvpline2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvpline2;
-        
-        /// <summary>
-        /// txtpcity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpcity;
-        
-        /// <summary>
-        /// rfvpcity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvpcity;
-        
-        /// <summary>
-        /// txtpstate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpstate;
-        
-        /// <summary>
-        /// rfvpstate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvpstate;
-        
-        /// <summary>
-        /// txtpzcode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpzcode;
-        
-        /// <summary>
-        /// rfvpcode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvpcode;
-        
-        /// <summary>
         /// txtoaline1 control.
         /// </summary>
         /// <remarks>
@@ -551,15 +218,6 @@ namespace PMS1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtoaline1;
-        
-        /// <summary>
-        /// rfvaline1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvaline1;
         
         /// <summary>
         /// txtoaline2 control.
@@ -571,15 +229,6 @@ namespace PMS1 {
         protected global::System.Web.UI.WebControls.TextBox txtoaline2;
         
         /// <summary>
-        /// rfvaline2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvaline2;
-        
-        /// <summary>
         /// txtocity control.
         /// </summary>
         /// <remarks>
@@ -587,15 +236,6 @@ namespace PMS1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtocity;
-        
-        /// <summary>
-        /// rfvocity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvocity;
         
         /// <summary>
         /// txtostate control.
@@ -607,13 +247,13 @@ namespace PMS1 {
         protected global::System.Web.UI.WebControls.TextBox txtostate;
         
         /// <summary>
-        /// rfvostate control.
+        /// txtocountry control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvostate;
+        protected global::System.Web.UI.WebControls.TextBox txtocountry;
         
         /// <summary>
         /// txtozcode control.
@@ -625,13 +265,121 @@ namespace PMS1 {
         protected global::System.Web.UI.WebControls.TextBox txtozcode;
         
         /// <summary>
-        /// rfvocode control.
+        /// txtraline1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvocode;
+        protected global::System.Web.UI.WebControls.TextBox txtraline1;
+        
+        /// <summary>
+        /// txtraline2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtraline2;
+        
+        /// <summary>
+        /// txtrcity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtrcity;
+        
+        /// <summary>
+        /// txtrstate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtrstate;
+        
+        /// <summary>
+        /// txtrcountry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtrcountry;
+        
+        /// <summary>
+        /// txtrzcode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtrzcode;
+        
+        /// <summary>
+        /// copy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox copy;
+        
+        /// <summary>
+        /// txtpaline1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtpaline1;
+        
+        /// <summary>
+        /// txtpaline2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtpaline2;
+        
+        /// <summary>
+        /// txtpcity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtpcity;
+        
+        /// <summary>
+        /// txtpstate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtpstate;
+        
+        /// <summary>
+        /// txtpcountry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtpcountry;
+        
+        /// <summary>
+        /// txtpzcode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtpzcode;
         
         /// <summary>
         /// btnbutton control.

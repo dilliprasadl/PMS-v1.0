@@ -30,16 +30,6 @@ namespace DAL
             }
         }
 
-        //public int langes_insert(string language, string experties_lvl,int Createdby)
-        //{
-        //    cmd.Parameters.Clear();
-        //    cmd.Parameters.AddWithValue("@languagename", language);
-        //    cmd.Parameters.AddWithValue("@Expertise", experties_lvl);
-        //    cmd.Parameters.AddWithValue("@Createdby", Createdby);
-        //    int output = dbmngr.ExecuteNonQuery(cmd, CommandType.StoredProcedure, "insert_lang");
-
-            //    return output;
-            //}
 
         public DataTable GetEmpLagByEmpId(int empid)
         {

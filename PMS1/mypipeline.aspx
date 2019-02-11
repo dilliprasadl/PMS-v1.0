@@ -4,10 +4,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="false">
         <Columns>
-<asp:BoundField DataField="Orderno" HeaderText="OrderNo" />
-<asp:BoundField DataField="Lendername" HeaderText="LenderName" />
-<asp:BoundField DataField="Branch" HeaderText="BranchName" />
- <asp:BoundField DataField="OrderReceivedDateTime" HeaderText="OrderReceivedDateTime" />
+<asp:BoundField DataField="order_id" HeaderText="order_id" />
+<asp:BoundField DataField="lender_name" HeaderText="lender_name" />
+<asp:BoundField DataField="branch" HeaderText="branch_name" />
+ <asp:BoundField DataField="order_recieved_dt" HeaderText="order_recieved_dt" />
  <%--<asp:BoundField DataField="Oredrreceivedtime" HeaderText="OredrReceivedTime" />--%>
 <%--<asp:BoundField DataField="LAreferenceno" HeaderText="LAReferenceNo " />--%>
  <%--<asp:BoundField DataField="LAname" HeaderText="LAName" />

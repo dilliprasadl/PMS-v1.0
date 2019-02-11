@@ -17,7 +17,7 @@
        
     <asp:Label ID="lblallorders" runat="server"></asp:Label>
       
-       <div class="panel-heading">Total Orders</div><br />
+       <div class="panel-heading">Total Order</div><br />
         <br />
        <div class="panel-body"><asp:Label ID="lblallorders_count" runat="server"></asp:Label></div> 
         </div>

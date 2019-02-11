@@ -58,10 +58,10 @@
             </asp:TemplateField>
               <asp:TemplateField HeaderText="LenderName">  
                             <EditItemTemplate>  
-                                <asp:TextBox ID="txtlname" runat="server" Text='<%# Eval("Lendername") %>'></asp:TextBox>  
+                                <asp:TextBox ID="txtlname" runat="server" Text='<%# Eval("lender_name") %>'></asp:TextBox>  
                             </EditItemTemplate>  
                             <ItemTemplate>  
-                                <asp:Label ID="lbllname" runat="server" Text='<%# Eval("Lendername") %>'></asp:Label>  
+                                <asp:Label ID="lbllname" runat="server" Text='<%# Eval("lender_name") %>'></asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField>  
                <%--         <asp:TemplateField HeaderText="AddressLine1">  
@@ -106,34 +106,34 @@
                         </asp:TemplateField>--%>  
              <asp:TemplateField HeaderText="MobileNumber">
                  <EditItemTemplate>  
-                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("Mobilenumber") %>'></asp:TextBox>  
+                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("manager_number") %>'></asp:TextBox>  
                             </EditItemTemplate> 
                 <ItemTemplate>  
-                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("Mobilenumber") %>'></asp:Label>  
+                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("manager_number") %>'></asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField>  
-             <asp:TemplateField HeaderText="AlternateNumber">
+             <asp:TemplateField HeaderText="LC Number">
                  <EditItemTemplate>  
-                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("Alternatenumber") %>'></asp:TextBox>  
+                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("lc_number") %>'></asp:TextBox>  
                             </EditItemTemplate> 
                 <ItemTemplate>  
-                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("Alternatenumber") %>'></asp:Label>  
+                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("lc_number") %>'></asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField>  
-             <asp:TemplateField HeaderText="Emailid">
+             <asp:TemplateField HeaderText="Manager Emailid">
                  <EditItemTemplate>  
-                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("Emailid") %>'></asp:TextBox>  
+                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("manager_email") %>'></asp:TextBox>  
                             </EditItemTemplate> 
                 <ItemTemplate>  
-                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("Emailid") %>'></asp:Label>  
+                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("manager_email") %>'></asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField>  
-             <asp:TemplateField HeaderText="AlternateEmail">
+             <asp:TemplateField HeaderText="LC Email">
                  <EditItemTemplate>  
-                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("Alternateemail") %>'></asp:TextBox>  
+                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("lc_email") %>'></asp:TextBox>  
                             </EditItemTemplate> 
                 <ItemTemplate>  
-                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("Alternateemail") %>'></asp:Label>  
+                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("lc_email") %>'></asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField>  
           

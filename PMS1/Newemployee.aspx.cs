@@ -131,18 +131,20 @@ namespace PMS1
                     com.Parameters.AddWithValue("@RCity", txtrcity.Text);
                     com.Parameters.AddWithValue("@RState", txtrstate.Text);
                     com.Parameters.AddWithValue("@RZipCode", txtrzcode.Text);
+                   com.Parameters.AddWithValue("@RCountry", txtrcountry.Text);
                     com.Parameters.AddWithValue("@PAddressLine1", txtpaline1.Text);
                     com.Parameters.AddWithValue("@PAddressLine2", txtpaline2.Text);
                     com.Parameters.AddWithValue("@PCity", txtpcity.Text);
                     com.Parameters.AddWithValue("@PState", txtpstate.Text);
                     com.Parameters.AddWithValue("@PZipCode", txtpzcode.Text);
-                    com.Parameters.AddWithValue("@OAddressLine1", txtoaline1.Text);
+                   com.Parameters.AddWithValue("@PCountry", txtpcountry.Text);
+                   com.Parameters.AddWithValue("@OAddressLine1", txtoaline1.Text);
                     com.Parameters.AddWithValue("@OAddressLine2", txtoaline2.Text);
                     com.Parameters.AddWithValue("@OCity", txtocity.Text);
                     com.Parameters.AddWithValue("@OState", txtostate.Text);
                     com.Parameters.AddWithValue("@OZipCode", txtozcode.Text);
-
-                    com.Parameters.AddWithValue("@Createdby", Session["User_id"].ToString());
+                     com.Parameters.AddWithValue("@OCountry", txtocountry.Text);
+                     com.Parameters.AddWithValue("@Createdby", Session["User_id"].ToString());
                     com.Parameters.AddWithValue("@EmployeeId",Convert.ToInt32(ViewState["empseque"]));
                     com.Parameters.AddWithValue("@result", SqlDbType.Int).Direction = ParameterDirection.Output;
                     // com.Parameters.Add(sp4);

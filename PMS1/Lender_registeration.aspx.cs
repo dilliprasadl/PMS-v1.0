@@ -21,32 +21,24 @@ namespace PMS1
             {
                 SqlConnection con = new SqlConnection("Data Source=DESKTOP-RIBI1U4\\SQLEXPRESS;Initial Catalog=PMS v1.0;Integrated Security=True");
                 {
-                    /* con.Open();
-                     SqlCommand cmd= new SqlCommand("insert into reg values(@Username,@Email,@Password,@ConfirmPassword");
-                     cmd.Parameters.AddWithValue("Username", txtuname.Text);
-                     cmd.Parameters.AddWithValue("Email", txtEmail.Text);
-                     cmd.Parameters.AddWithValue("Password", txtPwd.Text);
-                     cmd.ExecuteNonQuery();
-                     txtuname.Text = "";
-                     txtEmail.Text = "";
-                     txtPwd.Text = "";
-                     txtuname.Focus();*/
                     SqlCommand com = new SqlCommand("newlender", con);
                     com.CommandType = System.Data.CommandType.StoredProcedure;
-                    com.Parameters.AddWithValue("@LenderName", txtlname.Text);
-                    com.Parameters.AddWithValue("@LenderCode", txtlcode.Text);
-                    com.Parameters.AddWithValue("@ManagerName", txtmaname.Text);
-                    com.Parameters.AddWithValue("@MobileNumber", txtmnumber.Text);
-                    com.Parameters.AddWithValue("@AlternateNumber", txtanumber.Text);
-                    com.Parameters.AddWithValue("@Emailid", txtemailid.Text);
-                    com.Parameters.AddWithValue("@AlternateEmail", txtaemail.Text);
-                    com.Parameters.AddWithValue("@ContactName", txtcname.Text);
-                    com.Parameters.AddWithValue("@BranchName", txtbname.Text);
-                    com.Parameters.AddWithValue("@AddressLine1", txtaline1.Text);
-                    com.Parameters.AddWithValue("@AddressLine2", txtaline2.Text);
-                    com.Parameters.AddWithValue("@City", txtcity.Text);
-                    com.Parameters.AddWithValue("@State", txtstate.Text);
-                    com.Parameters.AddWithValue("@ZipCode", txtzcode.Text);
+                    com.Parameters.AddWithValue("@lender_name", lender_name.Text);
+                    com.Parameters.AddWithValue("@lender_code", lender_code.Text);
+                    com.Parameters.AddWithValue("@manager_name", manager_name.Text);
+                    com.Parameters.AddWithValue("@manager_number", manager_number.Text);
+                    com.Parameters.AddWithValue("@lc_number", lc_number.Text);
+                    com.Parameters.AddWithValue("@manager_email", manager_email.Text);
+                    com.Parameters.AddWithValue("@lc_email", lc_email.Text);
+                    com.Parameters.AddWithValue("@contact_name", contact_name.Text);
+                    com.Parameters.AddWithValue("@designation", designation.Text);
+                    com.Parameters.AddWithValue("@branch_name", branch_name.Text);
+                    com.Parameters.AddWithValue("@branch_add", branch_add.Text);
+                    com.Parameters.AddWithValue("@branch_add2", branch_add2.Text);
+                    com.Parameters.AddWithValue("@branch_city", branch_city.Text);
+                    com.Parameters.AddWithValue("@branch_state", branch_state.Text);
+                    com.Parameters.AddWithValue("@branch_zip", branch_zip.Text);
+                    com.Parameters.AddWithValue("@branch_country", branch_country.Text);
                     com.Parameters.AddWithValue("@Createdby", Session["User_id"].ToString());
                     com.Parameters.AddWithValue("@result", SqlDbType.Int).Direction=ParameterDirection.Output;
                     // com.Parameters.Add(sp4);

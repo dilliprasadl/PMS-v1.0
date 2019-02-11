@@ -13,147 +13,165 @@ namespace PMS1 {
     public partial class Client_registeration {
         
         /// <summary>
-        /// updatepanl control.
+        /// updatepan1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updatepanl;
+        protected global::System.Web.UI.UpdatePanel updatepan1;
         
         /// <summary>
-        /// txtlname control.
+        /// lender_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtlname;
+        protected global::System.Web.UI.WebControls.TextBox lender_name;
         
         /// <summary>
-        /// txtlcode control.
+        /// lender_code control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtlcode;
+        protected global::System.Web.UI.WebControls.TextBox lender_code;
         
         /// <summary>
-        /// txtmaname control.
+        /// manager_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtmaname;
+        protected global::System.Web.UI.WebControls.TextBox manager_name;
         
         /// <summary>
-        /// txtmnumber control.
+        /// manager_number control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtmnumber;
+        protected global::System.Web.UI.WebControls.TextBox manager_number;
         
         /// <summary>
-        /// txtanumber control.
+        /// manager_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtanumber;
+        protected global::System.Web.UI.WebControls.TextBox manager_email;
         
         /// <summary>
-        /// txtemailid control.
+        /// contact_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtemailid;
+        protected global::System.Web.UI.WebControls.TextBox contact_name;
         
         /// <summary>
-        /// txtaemail control.
+        /// lc_number control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtaemail;
+        protected global::System.Web.UI.WebControls.TextBox lc_number;
         
         /// <summary>
-        /// txtcname control.
+        /// lc_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcname;
+        protected global::System.Web.UI.WebControls.TextBox lc_email;
         
         /// <summary>
-        /// txtbname control.
+        /// designation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbname;
+        protected global::System.Web.UI.WebControls.TextBox designation;
         
         /// <summary>
-        /// txtaline1 control.
+        /// branch_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtaline1;
+        protected global::System.Web.UI.WebControls.TextBox branch_name;
         
         /// <summary>
-        /// txtaline2 control.
+        /// branch_add control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtaline2;
+        protected global::System.Web.UI.WebControls.TextBox branch_add;
         
         /// <summary>
-        /// txtcity control.
+        /// branch_add2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcity;
+        protected global::System.Web.UI.WebControls.TextBox branch_add2;
         
         /// <summary>
-        /// txtstate control.
+        /// branch_city control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtstate;
+        protected global::System.Web.UI.WebControls.TextBox branch_city;
         
         /// <summary>
-        /// txtzcode control.
+        /// branch_state control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtzcode;
+        protected global::System.Web.UI.WebControls.TextBox branch_state;
         
         /// <summary>
-        /// btnsubmit control.
+        /// branch_country control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnsubmit;
+        protected global::System.Web.UI.WebControls.TextBox branch_country;
+        
+        /// <summary>
+        /// branch_zip control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox branch_zip;
+        
+        /// <summary>
+        /// btnsubbmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnsubbmit;
     }
 }

@@ -123,7 +123,6 @@
     <Content Include="scripts\search_sort2.js" />
     <Content Include="scripts\search_sort_1.js" />
     <Content Include="scripts\StyleSheet1.css" />
-    <Content Include="singleupload.aspx" />
     <Content Include="newclientprocess.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -248,13 +247,6 @@
     </Compile>
     <Compile Include="Assignrole.aspx.designer.cs">
       <DependentUpon>Assignrole.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="singleupload.aspx.cs">
-      <DependentUpon>singleupload.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="singleupload.aspx.designer.cs">
-      <DependentUpon>singleupload.aspx</DependentUpon>
     </Compile>
     <Compile Include="newclientprocess.aspx.cs">
       <DependentUpon>newclientprocess.aspx</DependentUpon>
