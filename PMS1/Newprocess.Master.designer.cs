@@ -40,6 +40,15 @@ namespace PMS1 {
         protected global::System.Web.UI.ScriptManager srptmngr;
         
         /// <summary>
+        /// ordersmenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ordersmenu;
+        
+        /// <summary>
         /// neworder control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace PMS1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl multipleupload;
+        
+        /// <summary>
+        /// newmenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl newmenu;
         
         /// <summary>
         /// newemp control.
@@ -85,6 +103,15 @@ namespace PMS1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl newrole;
         
         /// <summary>
+        /// viewmenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl viewmenu;
+        
+        /// <summary>
         /// viewemp control.
         /// </summary>
         /// <remarks>
@@ -112,6 +139,15 @@ namespace PMS1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl unassigned;
         
         /// <summary>
+        /// updatemenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl updatemenu;
+        
+        /// <summary>
         /// updateemp control.
         /// </summary>
         /// <remarks>
@@ -130,22 +166,31 @@ namespace PMS1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl updatelender;
         
         /// <summary>
-        /// Li7 control.
+        /// pipelinemenu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li7;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pipelinemenu;
         
         /// <summary>
-        /// Li8 control.
+        /// mypipeline control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li8;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mypipeline;
+        
+        /// <summary>
+        /// teampipeline control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl teampipeline;
         
         /// <summary>
         /// username control.

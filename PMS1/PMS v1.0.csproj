@@ -102,7 +102,6 @@
   <ItemGroup>
     <Content Include="Calendar\calendar_blank.png" />
     <Content Include="Calendar\x_office_calendar.png" />
-    <Content Include="Dashboard Styles\Dashboard.css" />
     <Content Include="Lender_registeration.aspx" />
     <Content Include="Lender_view.aspx" />
     <Content Include="Createrole.aspx" />
@@ -301,6 +300,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Dashboard Styles\" />
     <Folder Include="Files\" />
     <Folder Include="otherfileupload\" />
     <Folder Include="photoupload\" />

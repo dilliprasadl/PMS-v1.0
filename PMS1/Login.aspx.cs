@@ -50,7 +50,7 @@ namespace PMS1
 
                 int user_id = (int)dr["Employeeid"];
 
-                // int Role_id = (int)dr["Role"];
+                 int Role_id = (int)dr["Role"];
 
                 // string city = (string)dr["City"];
 
@@ -58,7 +58,7 @@ namespace PMS1
 
                 Session["User_id"] = user_id;
 
-                // Session["Roleid"] = Role_id;
+                 Session["Roleid"] = Role_id;
 
 
 

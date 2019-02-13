@@ -132,7 +132,7 @@
                                     </asp:DropDownList>
 									</div>
 							</div>
-							<div class="col-md-3"> Please Enter in (DD-MM-YYYY) Format
+							<%--<div class="col-md-3"> Please Enter in (YYYY-MM-DD) Format--%>
 								<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-clipboard"></i></span>
                                     <asp:TextBox ID="txtdob" runat="server" CssClass="form-control"></asp:TextBox>

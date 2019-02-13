@@ -6,12 +6,12 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>PMS - Pipeline Management System</title>
-    <meta name="description" content="PMS - Pipeline Management System" />
+    <title>PMS | Pipeline Management System</title>
+    <meta name="description" content="PMS | Pipeline Management System" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png"/>
-    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png"/>
+    <link rel="apple-touch-icon" href="images/favicon.ico"/>
+    <link rel="shortcut icon" href="images/favicon.ico"/>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" />
@@ -69,108 +69,94 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <asp:ScriptManager runat="server" ID="srptmngr"></asp:ScriptManager>
-     <aside id="left-panel" class="left-panel">
-         <nav class="navbar navbar-expand-sm navbar-default">
-             <div id="main-menu" class="main-menu collapse navbar-collapse">
-                 <ul class="nav navbar-nav">
-                     <li class="active">
-                         <a href="home.aspx"><i class="menu-icon fa fa-laptop"></i>Home</a>
-                     </li>
-                     <li class="menu-item-has-children dropdown">
-                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Orders</a> 
-                         <ul class="sub-menu children dropdown-menu">
-                            <li runat="server" id="neworder" ><a href="New_orders.aspx">Single Order</a></li>
-                            <li runat="server" id="multipleupload" ><a href="Multipuleupload.aspx">Multiple Upload</a></li>
-                         </ul>
-                     </li>
-                     
-                     <li class="menu-item-has-children dropdown">
-                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>New</a> 
-                         <ul class="sub-menu children dropdown-menu">
-                            <li runat="server" id="newemp" ><a href="Newemployee.aspx">New Employee</a></li>
-                            <li runat="server" id="newlender" ><a href="Lender_registeration.aspx">New Lender</a></li>
-                             <li runat="server" id="newrole" ><a href="Createrole.aspx">New Role</a></li>
-                         </ul>
-                     </li>
-                     <li class="menu-item-has-children dropdown">
-                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>View</a> 
-                         <ul class="sub-menu children dropdown-menu">
-                            <li runat="server" id="viewemp" ><a href="viewemployee.aspx">View Employees</a></li>
-                            <li runat="server" id="viewlender" ><a href="Lender_view.aspx">View Lender</a></li>
-                             <li runat="server" id="unassigned" ><a href="unassigned.aspx">Un Assigned Orders</a></li>
-                         </ul>
-                     </li>
-                     <li class="menu-item-has-children dropdown">
-                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Update</a> 
-                         <ul class="sub-menu children dropdown-menu">
-                            <li runat="server" id="updateemp" ><a href="viewemployee.aspx">Update Employees</a></li>
-                            <li runat="server" id="updatelender" ><a href="Lender_view.aspx">Update Lender</a></li>
-                         </ul>
-                     </li>
-                     <li class="menu-item-has-children dropdown">
-                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Pipeline</a> 
-                         <ul class="sub-menu children dropdown-menu">
-                            <li runat="server" id="Li7" ><a href="mypipeline.aspx">My Pipeline</a></li>
-                            <li runat="server" id="Li8" ><a href="teampipeline.aspx">Team Pipeline</a></li>
-                         </ul>
-                     </li>
-                     
-                 </ul>
-             </div>
-         </nav>
-     </aside>   
-    <div id="right-panel" class="right-panel">
-        <header id="header" class="header">
-            <div class="top-left">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"/></a>
-                    <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"/></a>
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
-                </div>
-            </div>
-            <div class="top-right">
-                <div class="header-menu">
-                    <div class="header-left">
-                        
-                        
-                     
-                    </div>
+        <asp:ScriptManager runat="server" ID="srptmngr"></asp:ScriptManager>
+        <aside id="left-panel" class="left-panel">
+            <nav class="navbar navbar-expand-sm navbar-default">
+                <div id="main-menu" class="main-menu collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="home.aspx"><i class="menu-icon fa fa-laptop"></i>Home</a>
+                        </li>
+                        <li class="menu-item-has-children" runat="server" id="ordersmenu" visible="false">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs"></i>Orders</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li runat="server" id="neworder" visible="false"><a href="New_orders.aspx">Single Order</a></li>
+                                <li runat="server" id="multipleupload" visible="false"><a href="Multipuleupload.aspx">Multiple Upload</a></li>
+                            </ul>
+                        </li>
 
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"    >
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar"/> <asp:Label ID="username" runat="server" Text="Label"></asp:Label>
-                        </a>
-                        
-                        <div class="user-menu dropdown-menu">
-                            
-                            <asp:LinkButton ID="Button1" runat="server" OnClick="Button1_Click">Logout</asp:LinkButton>
+                        <li class="menu-item-has-children" runat="server" id="newmenu" visible="false">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs"></i>New</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li runat="server" id="newemp" visible="false"><a href="Newemployee.aspx">New Employee</a></li>
+                                <li runat="server" id="newlender" visible="false"><a href="Lender_registeration.aspx">New Lender</a></li>
+                                <li runat="server" id="newrole" visible="false"><a href="Createrole.aspx">New Role</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children" runat="server" id="viewmenu" visible="false">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs"></i>View</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li runat="server" id="viewemp" visible="false"><a href="viewemployee.aspx">View Employees</a></li>
+                                <li runat="server" id="viewlender" visible="false"><a href="Lender_view.aspx">View Lender</a></li>
+                                <li runat="server" id="unassigned" visible="false"><a href="unassigned.aspx">Un Assigned Orders</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children" runat="server" id="updatemenu" visible="false">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs"></i>Update</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li runat="server" id="updateemp" visible="false"><a href="viewemployee.aspx">Update Employees</a></li>
+                                <li runat="server" id="updatelender" visible="false"><a href="Lender_view.aspx">Update Lender</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children" runat="server" id="pipelinemenu" visible="false">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs"></i>Pipeline</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li runat="server" id="mypipeline" visible="false"><a href="mypipeline.aspx">My Pipeline</a></li>
+                                <li runat="server" id="teampipeline" visible="false"><a href="teampipeline.aspx">Team Pipeline</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        <div id="right-panel" class="right-panel">
+            <header id="header" class="header">
+                <div class="top-left">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="./">
+                            <img src="images/PMS.png" alt="Logo" /></a>
+                        <a class="navbar-brand hidden" href="./">
+                            <img src="images/PMS.png" alt="Logo" /></a>
+
+                    </div>
+                </div>
+                <div class="top-right">
+                    <div class="header-menu">
+                        <div class="header-left">
                         </div>
+
+                        <div class="user-area dropdown float-right">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar" />
+                                <asp:Label ID="username" runat="server" Text="Label"></asp:Label>
+                            </a>
+
+                            <div class="user-menu dropdown-menu">
+
+                                <asp:LinkButton ID="Button1" runat="server" OnClick="Button1_Click">Logout</asp:LinkButton>
+                            </div>
+                        </div>
+
                     </div>
-
                 </div>
-            </div>
-        </header>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-
-        
-
-        </asp:ContentPlaceHolder>
-    </div>
-        <%--<div class="right">
-
-        Welcome To <span></span> <strong> <asp:Label ID="username" runat="server"></asp:Label> </strong>
-
-        <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Button1_Click" />
-            </div>--%>
-            <div style="display:block;">
-
-        
+            </header>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
 
 
 
-    </div>
-   
     </form>
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>

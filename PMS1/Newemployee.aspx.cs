@@ -189,7 +189,7 @@ namespace PMS1
 
 
                     string s = "1";
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Only doc files are accepted!');", true);
+                    //ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Only doc files are accepted!');", true);
                     
                 }
                 catch (Exception ex)
