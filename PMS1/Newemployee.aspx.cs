@@ -76,17 +76,19 @@ namespace PMS1
                         txtrcity.Text = dtst.Tables[0].Rows[0]["RCity"].ToString();
                         txtrstate.Text = dtst.Tables[0].Rows[0]["RState"].ToString();
                         txtrzcode.Text = dtst.Tables[0].Rows[0]["RZipCode"].ToString();
+                        txtrcountry.Text = dtst.Tables[0].Rows[0]["RCountry"].ToString();
                         txtpaline1.Text = dtst.Tables[0].Rows[0]["PAddressLine1"].ToString();
                         txtpaline2.Text = dtst.Tables[0].Rows[0]["PAddressLine2"].ToString();
                         txtpcity.Text = dtst.Tables[0].Rows[0]["PCity"].ToString();
                         txtpstate.Text = dtst.Tables[0].Rows[0]["PState"].ToString();
                         txtpzcode.Text = dtst.Tables[0].Rows[0]["PZipCode"].ToString();
+                        txtpcountry.Text = dtst.Tables[0].Rows[0]["PCountry"].ToString();
                         txtoaline1.Text = dtst.Tables[0].Rows[0]["OAddressLine1"].ToString();
                         txtoaline2.Text = dtst.Tables[0].Rows[0]["OAddressLine2"].ToString();
                         txtocity.Text = dtst.Tables[0].Rows[0]["OCity"].ToString();
                         txtostate.Text = dtst.Tables[0].Rows[0]["OState"].ToString();
                         txtozcode.Text = dtst.Tables[0].Rows[0]["OZipCode"].ToString();
-
+                        txtocountry.Text = dtst.Tables[0].Rows[0]["OCountry"].ToString();
                         gv1.DataSource = dtst.Tables[1];
                         gv1.DataBind();
 
@@ -112,7 +114,6 @@ namespace PMS1
                     com.Parameters.AddWithValue("@Lastname", txtlaname.Text);
                     com.Parameters.AddWithValue("@Gender", ddlselect.SelectedValue.ToString());
                     com.Parameters.AddWithValue("@DateofBirthday", txtdob.Text);
-
                     com.Parameters.AddWithValue("@Mobilenumber", txtmnumber.Text);
                     com.Parameters.AddWithValue("@Alternatenumber", txtanumber.Text);
                     com.Parameters.AddWithValue("@Emailid", txtemail.Text);
@@ -298,7 +299,7 @@ namespace PMS1
                 empenty.DateOfBirth = txtdob.Text;
                 empenty.MobileNumber = txtmnumber.Text;
                 empenty.AlternateNumber = txtanumber.Text;
-                empenty.EmailId = txtaemail.Text;
+                empenty.EmailId = txtemail.Text;
                 empenty.AlternateEmail = txtaemail.Text;
                 empenty.FatherName = txtfaname.Text;
                 empenty.MotherName = txtmoname.Text;
@@ -312,16 +313,19 @@ namespace PMS1
                 empenty.RCity = txtrcity.Text;
                 empenty.RState = txtrstate.Text;
                 empenty.RZipCode = txtrzcode.Text;
+                empenty.RCountry = txtrcountry.Text;
                 empenty.PAddressLine1 = txtraline1.Text;
                 empenty.PAddressLine2 = txtpaline2.Text;
                 empenty.PCity = txtpcity.Text;
                 empenty.PState = txtpstate.Text;
                 empenty.PZipCode = txtpzcode.Text;
+                empenty.PCountry = txtpcountry.Text;
                 empenty.OAddressLine1 = txtoaline1.Text;
                 empenty.OAddressLine2 = txtoaline2.Text;
                 empenty.OCity = txtocity.Text;
                 empenty.OState = txtostate.Text;
                 empenty.OZipCode = txtozcode.Text;
+                empenty.OCountry = txtocountry.Text;
                 int update = bal.empudate(empenty,Convert.ToInt32(ViewState["empid"].ToString()));
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Successfully updated!');window.location.href = 'Newemployee.aspx'", true);

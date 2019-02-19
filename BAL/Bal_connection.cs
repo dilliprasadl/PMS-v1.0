@@ -19,7 +19,7 @@ namespace BAL
             return dal.dashboard_count();
         }
 
-       //subject_enty subenty = new subject_enty();
+        //subject_enty subenty = new subject_enty();
 
 
         //public int langes_insert(string language,string  experties_lvl,int Createdby)
@@ -32,7 +32,7 @@ namespace BAL
         {
             return dal.GetEmpLagByEmpId(empid);
         }
-        public  int langes_insert(subject_enty entty)
+        public int langes_insert(subject_enty entty)
         {
             return dal.langes_insert(entty);
         }
@@ -49,11 +49,32 @@ namespace BAL
         {
             return dal.Getempedit(empid);
         }
-        public int empudate(Employee_entity empenty,int empid)
+        public int empudate(Employee_entity empenty, int empid)
         {
-            return dal.empudate(empenty,empid);
+            return dal.empudate(empenty, empid);
         }
+        public DataSet Getlenderedit(int lenderid)
+        {
+            return dal.Getlenderedit(lenderid);
+        }
+        public int lenderupdate(lender_entity enttity, int lenderid)
+        {
+            return dal.lenderupdate(enttity, lenderid);
+        }
+        public DataSet Getorderedit(int order_id)
+        {
+            return dal.Getorderedit(order_id);
+        }
+        public int orderupdate(order_entity orentity, int order_id)
+        {
+            return dal.orderupdate(orentity, order_id);
+        }
+        public int empresetpwd(employee_resetpassword emrepwd, int employeeid)
+        {
+            return dal.empresetpwd(emrepwd, employeeid);
+        }
+
     }
 
-    
+
 }

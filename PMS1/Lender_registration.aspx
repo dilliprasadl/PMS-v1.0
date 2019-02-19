@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Newprocess.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="Lender_registeration.aspx.cs" Inherits="PMS1.Client_registeration" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Newprocess.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="Lender_registration.aspx.cs" Inherits="PMS1.Client_registeration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css" />
 	<link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css" />
@@ -103,7 +103,8 @@
 							</div>
 							<div class="clear"></div><br />
 <p class="bs-example bs-baseline-top">
-    <asp:Button ID="btnsubbmit" runat="server" Text="Register" OnClick="btnsubmit_Click" CssClass="btn btn-primary btn-block"/>
+    <asp:Button ID="btnsubmit" runat="server" Text="Register" OnClick="btnsubmit_Click" CssClass="btn btn-primary btn-block"/>
+     <asp:Button runat="server" ID="btn_update"  Visible="false" OnClick="btn_update_Click" Text="Update" ValidationGroup="fill" CssClass="btn btn-primary btn-block"/>
 						</p></div>
         </ContentTemplate>
     </asp:UpdatePanel>

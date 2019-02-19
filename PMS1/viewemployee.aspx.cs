@@ -228,7 +228,7 @@ namespace PMS1
 
                 }
 
-                else if (e.CommandName.ToString() == "ActiontoEdit")
+                else if (e.CommandName.ToString() == "Action to Edit")
                 {
                     string[] splitdata = e.CommandArgument.ToString().Split(',');
 

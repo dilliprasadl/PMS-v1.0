@@ -132,7 +132,7 @@
                                     </asp:DropDownList>
 									</div>
 							</div>
-							<%--<div class="col-md-3"> Please Enter in (YYYY-MM-DD) Format--%>
+							<div class="col-md-3"> Please Enter in (YYYY-MM-DD) Format
 								<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-clipboard"></i></span>
                                     <asp:TextBox ID="txtdob" runat="server" CssClass="form-control"></asp:TextBox>
@@ -210,16 +210,18 @@
 							<div class="form-group">
 							<div class="col-md-6"> Upload Photo
 								<asp:FileUpload ID="uploadphoto" runat="server" />
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required Field" ControlToValidate="uploadphoto"></asp:RequiredFieldValidator>
 							</div>
 							<div class="col-md-6"> Upload Other Files
 								<asp:FileUpload ID="Uploadofiles" runat="server" />
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Required Field" ControlToValidate="Uploadofiles"></asp:RequiredFieldValidator>
 							</div>
 							<div class="clear"></div><br />
 							<div class="panel-heading">
 				<div class="panel-title">
 					<h3>2. Language Skill Set</h3>
 				</div>
-			</div><br />
+			
 <table><tr>
                   <td colspan="9">
                       <asp:GridView ID="gv1" runat="server" BackColor="LightGoldenrodYellow"  BorderColor="Tan" BorderWidth="1px" CellPadding="2"  AutoGenerateColumns="false" ForeColor="Black" GridLines="None">
@@ -244,31 +246,35 @@
                       </asp:GridView>  
                             </td>
                    </tr>
+                    
                      <tr><td>Language Known</td><td>:</td>
                          <td>
-                               <asp:TextBox runat="server" ID="txtlknown"  onkeypress="return onlyAlphabets(event,this);"></asp:TextBox>
-                        </td>
-                        <td>Expertise Level</td><td>:</td>
-                         <td colspan="4">
-                            <asp:RadioButtonList ID="rblelevel" runat="server" RepeatDirection="Horizontal">
-                                      <asp:ListItem>Basic</asp:ListItem>
-
-                                              <asp:ListItem>Fluent</asp:ListItem>
-
-                                     <asp:ListItem>Expert</asp:ListItem>
-
-                            </asp:RadioButtonList>
-                                                       
-                         </td>
-
-                              <td>
-
-                                  <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" /></td>
+                           
+							
+                               <asp:TextBox runat="server" ID="txtlknown"  onkeypress="return onlyAlphabets(event,this);" CssClass="form-control"></asp:TextBox>
+                        
+                                 </td>
+                         </tr>
+                         
 
                               </tr>  
 
                     <tr>
-</tr></table>
+                        <td>Expertise Level</td>
+                        <td>:</td>
+                        <td colspan="4">
+                            <asp:RadioButtonList ID="rblelevel" runat="server" RepeatDirection="Horizontal">
+                                <asp:ListItem>Basic</asp:ListItem>
+                                <asp:ListItem>Fluent</asp:ListItem>
+                                <asp:ListItem>Expert</asp:ListItem>
+                            </asp:RadioButtonList>
+                        </td>
+                        <td>
+                            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add" />
+                        </td>
+    </tr>
+                                </table>
+                                </div><br />
 							<div class="panel-heading">
 				<div class="panel-title">
 					<h3>3. Office Address</h3>
@@ -352,19 +358,7 @@
 							</div><div class="clear"></div><br /><div class="panel-heading">
 				<div class="panel-title">
 					
-					<script>
-					function copydata(f) {
-  if(f.copytoo.checked == true) {
-    txtpaddline1.value = txtraline1.value;
-    txtpcity.value = txtrcity.value;
-    txtpaddline2.value = txtraddline2.value;
-    txtpstate.value = txtrstate.value;
-    txtpcountry.value = txtrcountry.value;
-    txtpzipcode.value = txtrzcode.value;
-  }
-}
-
-    </script>
+					
                     <asp:CheckBox ID="copy" runat="server" />
 <em>Check this box if Residential Address and Permanent Address are the same.</em><br /><br />
 					<h3>5. Permanent Address</h3>

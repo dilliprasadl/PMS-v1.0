@@ -83,7 +83,7 @@
                 <asp:LinkButton runat="server" ID="lnkbtn" CommandName="Active" CommandArgument='<%#Eval("Employeeid")+","+Eval("isactive") %>' Text='<%#(Convert.ToInt32(Eval("isactive")))==1?"Click Here Deactivate":"Click To Active" %>'></asp:LinkButton>
           </td>
           <td>
-               <asp:LinkButton runat="server" ID="lnkbtnedt" CommandName="ActiontoEdit" CommandArgument='<%#Eval("Employeeid")+","+Eval("isactive") %>' Text="Click to update"></asp:LinkButton>
+               <asp:LinkButton runat="server" ID="lnkbtnedt" CommandName="Action to Edit" CommandArgument='<%#Eval("Employeeid")+","+Eval("isactive") %>' Text="Click to update"></asp:LinkButton>
           </td>
           <td>
                <asp:LinkButton runat="server" ID="lblreset" CommandName="ResetPassword" CommandArgument='<%#Eval("Employeeid") %>' Text="ResetPassword"></asp:LinkButton>

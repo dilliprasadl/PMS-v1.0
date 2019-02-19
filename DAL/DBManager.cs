@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-   public class DBManager
+    public class DBManager
     {
         public SqlDataReader ExecuteReader(SqlCommand cmd, CommandType cmdType, string cmdText)
         {

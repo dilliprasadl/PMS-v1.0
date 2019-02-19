@@ -102,7 +102,8 @@
   <ItemGroup>
     <Content Include="Calendar\calendar_blank.png" />
     <Content Include="Calendar\x_office_calendar.png" />
-    <Content Include="Lender_registeration.aspx" />
+    <Content Include="Dashboard Styles\Dashboard.css" />
+    <Content Include="Lender_registration.aspx" />
     <Content Include="Lender_view.aspx" />
     <Content Include="Createrole.aspx" />
     <Content Include="Dashboard.aspx" />
@@ -149,12 +150,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lender_registeration.aspx.cs">
-      <DependentUpon>Lender_registeration.aspx</DependentUpon>
+    <Compile Include="Lender_registration.aspx.cs">
+      <DependentUpon>Lender_registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Lender_registeration.aspx.designer.cs">
-      <DependentUpon>Lender_registeration.aspx</DependentUpon>
+    <Compile Include="Lender_registration.aspx.designer.cs">
+      <DependentUpon>Lender_registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Lender_view.aspx.cs">
       <DependentUpon>Lender_view.aspx</DependentUpon>
@@ -300,7 +301,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dashboard Styles\" />
     <Folder Include="Files\" />
     <Folder Include="otherfileupload\" />
     <Folder Include="photoupload\" />

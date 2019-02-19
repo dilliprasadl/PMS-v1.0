@@ -162,7 +162,7 @@
 							<div class="col-md-3"> Has Lender Sales Informed ?
 								<div class="input-group">
 										<span class="input-group-addon">♁</span>
-                                    <asp:DropDownList ID="hls_info" runat="server">
+                                    <asp:DropDownList ID="hls_info" runat="server" CssClass="form-control">
                                         <asp:ListItem Value="0">--SELECT--</asp:ListItem>
                                         <asp:ListItem Value="yes">YES</asp:ListItem>
                                         <asp:ListItem Value="no">NO</asp:ListItem>
@@ -170,7 +170,8 @@
 									</div>
 							</div><div class="clear"></div><br />
 							<p class="bs-example bs-baseline-top">
-                                <asp:Button ID="btnsubmit" OnClick="btnsubmit_Click" runat="server" Text="Create Order" class="btn btn-primary btn-block"/>
+                                <asp:Button ID="btnsubmit" Onclick="btnsubmit_Click" runat="server" Text="Create Order" class="btn btn-primary btn-block"/>
+                                <asp:Button ID="btn_update" OnClick="btn_update_Click1" runat="server" Text="Update Order" CssClass="btn btn-primary btn-block" />
 						</p></div>
        </div>
             </ContentTemplate>

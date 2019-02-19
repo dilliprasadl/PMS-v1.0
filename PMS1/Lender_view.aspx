@@ -23,7 +23,7 @@
     <script>
 
         $(document).ready(function () {
-            $('#GridView1').DataTable({
+            $('#example1').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
                    // 'copy', 'csv', 'excel', 'pdf', 'print'
@@ -34,26 +34,75 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false">
-<%--        <Columns>
-<asp:BoundField DataField="Clientname" HeaderText="ClientName" />
-<asp:BoundField DataField="Clientcode" HeaderText="ClientCode" />
-<asp:BoundField DataField="Contactname" HeaderText="ContactName" />
- <asp:BoundField DataField="Contactnumber" HeaderText="ContactNumber" />
- <asp:BoundField DataField="Emailid" HeaderText="EmailId" />
- <asp:BoundField DataField="Branchname" HeaderText="BranchName" />
- <asp:BoundField DataField="Streetname" HeaderText="StreetName" />
- <asp:BoundField DataField="Town" HeaderText="Town" />
- <asp:BoundField DataField="State" HeaderText="State" />
- <asp:BoundField DataField="Pincode" HeaderText="Pincode" />
+      Download in :<asp:Button ID="btnexcel" runat="server" Text="Excel" OnClick="btnexcel_Click"/>
+     <asp:Button ID="btnword" runat="server" Text="Word" OnClick="btnword_Click"/>
+    <br /><br />
+     <table id="example1" class="display nowrap;" style="width:100%;padding:1Px">
+        <thead>
+           <tr>
+                <th>S No</th>
+                <th>Lender Name</th>
+                <th>Manager Number</th>
+                <th>Loan Contact Number</th>
+                <th>Manager Email</th>
+                <th>Loan Contact Email</th>
+                <th>Action To Edit</th>
+            </tr>
+        </thead>
+        <tbody>
 
-</Columns>--%>
+        
+           
+<asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
+      <ItemTemplate>
+     
+      <tr>
+          <td>
+               <%# Container.ItemIndex+1 %>
+                    <asp:HiddenField runat="server" ID="lender_id" Value='<%#Eval("lender_id") %>' />
+          </td>
+          <td>
+         <asp:Label runat="server" ID="lender_name"  Text='<%#Eval("lender_name") %>'></asp:Label>
+          </td>
+          <td>
+                <asp:Label ID="manager_number" runat="server" Text='<%# Eval("manager_number") %>'></asp:Label>  
+          </td>
+          <td>
+              <asp:Label ID="lc_number" runat="server" Text='<%# Eval("lc_number") %>'></asp:Label>  
+          </td>
+          <td>
+               <asp:Label ID="manager_email" runat="server" Text='<%# Eval("manager_email") %>'></asp:Label>  
+          </td>
+          <td>
+               <asp:Label ID="lc_email" runat="server" Text='<%# Eval("lc_email") %>'></asp:Label>  
+          </td>
+          <td>
+               <asp:LinkButton runat="server" ID="lnkbtnedt" CommandName="Action to Edit" CommandArgument='<%#Eval("lender_id")%>' Text="Click to update"></asp:LinkButton>
+          </td>
+       
+      </tr>
+
+  
+          </ItemTemplate>
+         
+
+    </asp:Repeater>
+                  
+        
+          
+        </tbody>
+    </table>
+    <div style="display:none">
+         <asp:GridView ID="Grd_downlod1" runat="server" AutoGenerateColumns="False">
+
+         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+
         <Columns>
 
           <asp:TemplateField HeaderText="S No">
                 <ItemTemplate>
                     <%# Container.DataItemIndex + 1 %>
-                    <asp:HiddenField runat="server" ID="hdn_empid" Value='<%#Eval("id") %>' />
+                    <asp:HiddenField runat="server" ID="hdn_empid" Value='<%#Eval("lender_id") %>' />
                     </ItemTemplate>
             </asp:TemplateField>
               <asp:TemplateField HeaderText="LenderName">  
@@ -64,81 +113,44 @@
                                 <asp:Label ID="lbllname" runat="server" Text='<%# Eval("lender_name") %>'></asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField>  
-               <%--         <asp:TemplateField HeaderText="AddressLine1">  
-                            <EditItemTemplate>  
-                                <asp:TextBox ID="txtaline1" runat="server" Text='<%# Eval("Addressline1") %>'></asp:TextBox>  
-                            </EditItemTemplate>  
-                            <ItemTemplate>  
-                                <asp:Label ID="lblaline1" runat="server" Text='<%# Eval("Addressline1") %>'></asp:Label>  
-                            </ItemTemplate>  
-                        </asp:TemplateField>  
-              <asp:TemplateField HeaderText="AddressLine2">  
-                            <EditItemTemplate>  
-                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("Addressline2") %>'></asp:TextBox>  
-                            </EditItemTemplate>  
-                            <ItemTemplate>  
-                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("Addressline2") %>'></asp:Label>  
-                            </ItemTemplate>  
-                        </asp:TemplateField>  
-            <asp:TemplateField HeaderText="City">
-                 <EditItemTemplate>  
-                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("city") %>'></asp:TextBox>  
-                            </EditItemTemplate> 
-                <ItemTemplate>  
-                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("city") %>'></asp:Label>  
-                            </ItemTemplate>  
-                        </asp:TemplateField>  
-            <asp:TemplateField HeaderText="State">
-                 <EditItemTemplate>  
-                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("State") %>'></asp:TextBox>  
-                            </EditItemTemplate> 
-                <ItemTemplate>  
-                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("State") %>'></asp:Label>  
-                            </ItemTemplate>  
-                        </asp:TemplateField>  
-            <asp:TemplateField HeaderText="ZipCode">
-                 <EditItemTemplate>  
-                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("ZipCode") %>'></asp:TextBox>  
-                            </EditItemTemplate> 
-                <ItemTemplate>  
-                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("Zipcode") %>'></asp:Label>  
-                            </ItemTemplate>  
-                        </asp:TemplateField>--%>  
              <asp:TemplateField HeaderText="MobileNumber">
                  <EditItemTemplate>  
-                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("manager_number") %>'></asp:TextBox>  
+                                <asp:TextBox ID="txtmnumber" runat="server" Text='<%# Eval("manager_number") %>'></asp:TextBox>  
                             </EditItemTemplate> 
                 <ItemTemplate>  
-                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("manager_number") %>'></asp:Label>  
+                                <asp:Label ID="lblmnumber" runat="server" Text='<%# Eval("manager_number") %>'></asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField>  
-             <asp:TemplateField HeaderText="LC Number">
+             <asp:TemplateField HeaderText="AlternateNumber">
                  <EditItemTemplate>  
-                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("lc_number") %>'></asp:TextBox>  
+                                <asp:TextBox ID="txtalnumber" runat="server" Text='<%# Eval("lc_number") %>'></asp:TextBox>  
                             </EditItemTemplate> 
                 <ItemTemplate>  
-                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("lc_number") %>'></asp:Label>  
+                                <asp:Label ID="lblalnumber" runat="server" Text='<%# Eval("lc_number") %>'></asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField>  
-             <asp:TemplateField HeaderText="Manager Emailid">
+             <asp:TemplateField HeaderText="Emailid">
                  <EditItemTemplate>  
-                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("manager_email") %>'></asp:TextBox>  
+                                <asp:TextBox ID="txtemid" runat="server" Text='<%# Eval("manager_email") %>'></asp:TextBox>  
                             </EditItemTemplate> 
                 <ItemTemplate>  
-                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("manager_email") %>'></asp:Label>  
+                                <asp:Label ID="lblemid" runat="server" Text='<%# Eval("manager_email") %>'></asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField>  
-             <asp:TemplateField HeaderText="LC Email">
+             <asp:TemplateField HeaderText="AlternateEmail">
                  <EditItemTemplate>  
-                                <asp:TextBox ID="txtaline2" runat="server" Text='<%# Eval("lc_email") %>'></asp:TextBox>  
+                                <asp:TextBox ID="txtalemail" runat="server" Text='<%# Eval("lc_email") %>'></asp:TextBox>  
                             </EditItemTemplate> 
                 <ItemTemplate>  
-                                <asp:Label ID="lblaline2" runat="server" Text='<%# Eval("lc_email") %>'></asp:Label>  
+                                <asp:Label ID="lblalemail" runat="server" Text='<%# Eval("lc_email") %>'></asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField>  
           
           
               
               </Columns>
+      
     </asp:GridView>
+    </div>
+   
 </asp:Content>

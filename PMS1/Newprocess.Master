@@ -89,7 +89,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs"></i>New</a>
                             <ul class="sub-menu children dropdown-menu">
                                 <li runat="server" id="newemp" visible="false"><a href="Newemployee.aspx">New Employee</a></li>
-                                <li runat="server" id="newlender" visible="false"><a href="Lender_registeration.aspx">New Lender</a></li>
+                                <li runat="server" id="newlender" visible="false"><a href="Lender_registration.aspx">New Lender</a></li>
                                 <li runat="server" id="newrole" visible="false"><a href="Createrole.aspx">New Role</a></li>
                             </ul>
                         </li>
