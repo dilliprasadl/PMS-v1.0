@@ -145,6 +145,7 @@
     <Content Include="Login.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="viewrole.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -298,6 +299,13 @@
     </Compile>
     <Compile Include="viewprocess.aspx.designer.cs">
       <DependentUpon>viewprocess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewrole.aspx.cs">
+      <DependentUpon>viewrole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewrole.aspx.designer.cs">
+      <DependentUpon>viewrole.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -213,7 +213,7 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required Field" ControlToValidate="uploadphoto"></asp:RequiredFieldValidator>
 							</div>
 							<div class="col-md-6"> Upload Other Files
-								<asp:FileUpload ID="Uploadofiles" runat="server" />
+								<asp:FileUpload ID="Uploadofiles" runat="server"/>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Required Field" ControlToValidate="Uploadofiles"></asp:RequiredFieldValidator>
 							</div>
 							<div class="clear"></div><br />
@@ -221,8 +221,91 @@
 				<div class="panel-title">
 					<h3>2. Language Skill Set</h3>
 				</div>
+			</div><br /><div class="col-md-3"> Primary Language 1
+								<div class="input-group"><span class="input-group-addon">௹</span>
+                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" value="English" Enabled="false"></asp:TextBox>
+									</div>
+							</div>							
+							<div class="col-md-3"> Expertize Level
+								<div class="input-group"><span class="input-group-addon"><i class="entypo-chart-bar"></i></span>
+									<asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control">
+                                        <asp:ListItem Value="0">--SELECT--</asp:ListItem>
+                                        <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
+                                        <asp:ListItem Value="Conversational">Conversational</asp:ListItem>
+                                        <asp:ListItem Value="Fluent">Fluent</asp:ListItem>
+                                        <asp:ListItem Value="Expert">Expert</asp:ListItem>
+                                    </asp:DropDownList>
+									
+									</div>
+							</div>									
+							<div class="col-md-3"> Primary Language 2
+								<div class="input-group"><span class="input-group-addon">௹</span>
+									<asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" value="Hindi" Enabled="false"></asp:TextBox>
+									
+									</div>
+							</div>
+							<div class="col-md-3"> Expertize Level
+								<div class="input-group"><span class="input-group-addon"><i class="entypo-chart-bar"></i></span>
+									<asp:DropDownList ID="DropDownList4" runat="server" CssClass="form-control">
+                                        <asp:ListItem Value="0">--SELECT--</asp:ListItem>
+                                        <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
+                                        <asp:ListItem Value="Conversational">Conversational</asp:ListItem>
+                                        <asp:ListItem Value="Fluent">Fluent</asp:ListItem>
+                                        <asp:ListItem Value="Expert">Expert</asp:ListItem>
+                                    </asp:DropDownList>
+									
+									
+									</div>
+							</div>	
+							<div class="clear"></div>
+							<br />
+							<div class="col-md-3"> Additional Language 1
+								<div class="input-group"><span class="input-group-addon">௹</span>
+									<asp:DropDownList ID="DropDownList5" runat="server" CssClass="form-control">
+                                        <asp:ListItem Value="0">--SELECT--</asp:ListItem>
+                                        <asp:ListItem Value="Kannada">Kannada</asp:ListItem>
+                                        <asp:ListItem Value="Telugu">Telugu</asp:ListItem>
+                                        <asp:ListItem Value="Tamil">Tamil</asp:ListItem>
+                                    </asp:DropDownList>
+									
+									</div>
+							</div>
+							<div class="col-md-3"> Expertize Level
+								<div class="input-group"><span class="input-group-addon"><i class="entypo-chart-bar"></i></span>
+									<asp:DropDownList ID="DropDownList6" runat="server" CssClass="form-control">
+                                        <asp:ListItem Value="0">--SELECT--</asp:ListItem>
+                                        <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
+                                        <asp:ListItem Value="Conversational">Conversational</asp:ListItem>
+                                        <asp:ListItem Value="Fluent">Fluent</asp:ListItem>
+                                        <asp:ListItem Value="Expert">Expert</asp:ListItem>
+                                    </asp:DropDownList>
+									
+									</div>
+							</div>								
+							<div class="col-md-3"> Additional Language 2
+								<div class="input-group"><span class="input-group-addon">௹</span>
+									<asp:DropDownList ID="DropDownList7" runat="server" CssClass="form-control">
+                                        <asp:ListItem Value="0">--SELECT--</asp:ListItem>
+                                        <asp:ListItem Value="Kannada">Kannada</asp:ListItem>
+                                        <asp:ListItem Value="Telugu">Telugu</asp:ListItem>
+                                        <asp:ListItem Value="Tamil">Tamil</asp:ListItem>
+                                    </asp:DropDownList>
+									</div>
+							</div>
+							<div class="col-md-3"> Expertize Level
+								<div class="input-group"><span class="input-group-addon"><i class="entypo-chart-bar"></i></span>
+									<asp:DropDownList ID="DropDownList8" runat="server" CssClass="form-control">
+                                        <asp:ListItem Value="0">--SELECT--</asp:ListItem>
+                                        <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
+                                        <asp:ListItem Value="Conversational">Conversational</asp:ListItem>
+                                        <asp:ListItem Value="Fluent">Fluent</asp:ListItem>
+                                        <asp:ListItem Value="Expert">Expert</asp:ListItem>
+                                    </asp:DropDownList>
+									</div>
+							</div>	
+							<div class="clear"></div><br />
 			
-<table><tr>
+<%--<table><tr>
                   <td colspan="9">
                       <asp:GridView ID="gv1" runat="server" BackColor="LightGoldenrodYellow"  BorderColor="Tan" BorderWidth="1px" CellPadding="2"  AutoGenerateColumns="false" ForeColor="Black" GridLines="None">
                       <AlternatingRowStyle BackColor="PaleGoldenrod" />
@@ -273,7 +356,8 @@
                             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add" />
                         </td>
     </tr>
-                                </table>
+                                </table>--%>
+
                                 </div><br />
 							<div class="panel-heading">
 				<div class="panel-title">

@@ -53,9 +53,7 @@ namespace PMS1
            ViewState["empid"] = empid = Convert.ToInt32(Request.QueryString["empid"].ToString());
 
                     using (dtst = bal.Getempedit(empid))
-
                     {
-
                         txtfname.Text = dtst.Tables[0].Rows[0]["firstname"].ToString();
                         txtlaname.Text = dtst.Tables[0].Rows[0]["Lastname"].ToString();
                         ddlselect.SelectedValue = dtst.Tables[0].Rows[0]["Gender"].ToString();
@@ -89,8 +87,7 @@ namespace PMS1
                         txtostate.Text = dtst.Tables[0].Rows[0]["OState"].ToString();
                         txtozcode.Text = dtst.Tables[0].Rows[0]["OZipCode"].ToString();
                         txtocountry.Text = dtst.Tables[0].Rows[0]["OCountry"].ToString();
-                        gv1.DataSource = dtst.Tables[1];
-                        gv1.DataBind();
+                        
 
                     }
 
@@ -189,7 +186,7 @@ namespace PMS1
                     uploadphoto.SaveAs(Server.MapPath("~/photoupload/") + photo_upload);
 
 
-                    string s = "1";
+                    //string s = "1";
                     //ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Only doc files are accepted!');", true);
                     
                 }
@@ -213,7 +210,7 @@ namespace PMS1
                     ViewState["fileupload"] = upload_file;
                     Uploadofiles.SaveAs(Server.MapPath("~/otherfileupload/") + upload_file);
 
-                    string s = "2";
+                    //string s = "2";
                 }
                 catch (Exception ex)
                 {
@@ -239,8 +236,8 @@ namespace PMS1
                 SqlDataAdapter da = new SqlDataAdapter(com);
                 DataTable ds = new DataTable();
                 da.Fill(ds);
-                gv1.DataSource = ds;
-                gv1.DataBind();
+                //gv1.DataSource = ds;
+                //gv1.DataBind();
 
                
                 
@@ -265,28 +262,28 @@ namespace PMS1
           
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                entty.language = txtlknown.Text;
-                entty.experties = rblelevel.SelectedItem.ToString();
-                entty.userid = Convert.ToInt32(Session["User_id"]);
-                entty.Empsequence = Convert.ToInt32(ViewState["empseque"].ToString());
-                int result = bal.langes_insert(entty);
-              if (result==1)
-              {
-                    Bindlang();
-              }
+        //protected void Button1_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        entty.language = txtlknown.Text;
+        //        entty.experties = rblelevel.SelectedItem.ToString();
+        //        entty.userid = Convert.ToInt32(Session["User_id"]);
+        //        entty.Empsequence = Convert.ToInt32(ViewState["empseque"].ToString());
+        //        int result = bal.langes_insert(entty);
+        //      if (result==1)
+        //      {
+        //            Bindlang();
+        //      }
 
                
-            }
-            catch (Exception ex)
-            {
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                throw ex;
-            }
-        }
+        //        throw ex;
+        //    }
+        //}
 
         protected void btn_update_Click(object sender, EventArgs e)
         {
