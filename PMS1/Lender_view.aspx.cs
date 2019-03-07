@@ -135,7 +135,7 @@ namespace PMS1
                     int id = Convert.ToInt16(splitdata[0].ToString());
 
 
-                    Response.Redirect("lender_registration.aspx?lenderid=" + id, false);
+                    Response.Redirect("editlender.aspx?lenderid=" + id, false);
                 }
             }
             catch (Exception ex)

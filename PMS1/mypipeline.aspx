@@ -1,4 +1,4 @@
-﻿<%@ Page Title="PMS | mypipeline" Language="C#" MasterPageFile="~/Newprocess.Master" AutoEventWireup="true" CodeBehind="mypipeline.aspx.cs" Inherits="PMS1.mypipeline" %>
+﻿<%@ Page Title="PMS | mypipeline" Language="C#" MasterPageFile="~/Newprocess.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="mypipeline.aspx.cs" Inherits="PMS1.mypipeline" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
@@ -39,19 +39,15 @@
      <table id="example2" class="display nowrap;" style="width:100%;padding:1Px">
         <thead>
            <tr>
-               <%-- <th>S No</th>--%>
-               <th>OrderNo</th>
-                <th>LenderName</th>
+             
+               <th>Order No</th>
+                <th>LA Applicant Name</th>
                 <th>Branch</th>
-              <%--  <th>LastName</th>--%>
-               <%-- <th>LAReferenceNumber</th>--%>
-             <%--   <th>LoanApplicationName</th>--%>
-                <th>OrderReceivedDate</th>
-                <th>AssignTo</th>
-               <%-- <th>EmailId</th>--%>
-               <%-- <th>AlternateEmail</th>--%>
-           <%--     <th>StatusAction</th>--%>
-                <th>ActionToEdit</th>
+                <th>Assigned To </th>
+                <th>Assigned By</th>
+               <th>Order Received On</th>
+               <th>Action</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
@@ -70,42 +66,24 @@
          <asp:Label runat="server" ID="Label2"  Text='<%#Eval("order_id") %>'></asp:Label>
           </td>
           <td>
-         <asp:Label runat="server" ID="lbid"  Text='<%#Eval("lender_name") %>'></asp:Label>
+         <asp:Label runat="server" ID="lbid"  Text='<%#Eval("la_name") %>'></asp:Label>
           </td>
           <td>
                 <asp:Label ID="lblfname" runat="server" Text='<%# Eval("branch") %>'></asp:Label>  
           </td>
-        <%--  <td>
-              <asp:Label ID="lbllname" runat="server" Text='<%# Eval("lastname") %>'></asp:Label>  
-          </td>--%>
-        <%--  <td>
-              <asp:Label ID="lblgender" runat="server" Text='<%# Eval("LAreferenceNo") %>'></asp:Label>  
-          </td>--%>
-          <td>
-               <asp:Label ID="lblmnumber" runat="server" Text='<%# Eval("order_received_dt") %>'></asp:Label>  
-          </td>
+      
           <td>
                <asp:Label ID="Label1" runat="server" Text='<%# Eval("assignto") %>'></asp:Label>  
           </td>
-         <%-- <td>
-              <asp:Label ID="lbleid" runat="server" Text='<%# Eval("Emailid") %>'></asp:Label>  
-          </td>--%>
-          <%--  <td>
-              <asp:Label ID="lblResetPassword" runat="server" Text='<%# Eval("ResetPassword") %>'></asp:Label>  
-          </td>
-            <td>
-              <asp:Label ID="lblassrole" runat="server" Text='<%# Eval("AssignRole") %>'></asp:Label>  
-          </td>--%>
-       <%--   <td>
-               <asp:Label ID="lblaemail" runat="server" Text='<%# Eval("AlternateEmail") %>'></asp:Label>  
-          </td>--%>
-         <%-- <td>
-                <asp:LinkButton runat="server" ID="lnkbtn" CommandName="Active" CommandArgument='<%#Eval("Employeeid")+","+Eval("isactive") %>' Text='<%#(Convert.ToInt32(Eval("isactive")))==1?"Click To DeActive":"Click To Active" %>'></asp:LinkButton>
-          </td>--%>
           <td>
-               <asp:LinkButton runat="server" ID="lnkbtnedt" CommandName="ActiontoEdit" CommandArgument='<%#Eval("order_id")%>' Text="Click to update"></asp:LinkButton>
+              <asp:Label ID="Label3" runat="server" Text='<%# Eval("assignby") %>'></asp:Label>
           </td>
-          </
+          <td>
+              <asp:Label ID="Label4" runat="server" Text='<%# Eval("order_received_dt") %>'></asp:Label>
+          </td>
+          <td>
+              <asp:LinkButton runat="server" ID="takeorder" CommandName="takeorder" CommandArgument='<%#Eval("order_id") %>' Text="Take Order" />
+          </td>
       </tr>
 
   
@@ -133,10 +111,10 @@
             </asp:TemplateField>
               <asp:TemplateField HeaderText="LenderName">  
                             <EditItemTemplate>  
-                                <asp:TextBox ID="txtlname" runat="server" Text='<%# Eval("lender_name") %>'></asp:TextBox>  
+                                <asp:TextBox ID="txtlname" runat="server" Text='<%# Eval("la_name") %>'></asp:TextBox>  
                             </EditItemTemplate>  
                             <ItemTemplate>  
-                                <asp:Label ID="lbllname" runat="server" Text='<%# Eval("lender_name") %>'></asp:Label>  
+                                <asp:Label ID="lbllname" runat="server" Text='<%# Eval("la_name") %>'></asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField>  
              <asp:TemplateField HeaderText="MobileNumber">
@@ -147,22 +125,8 @@
                                 <asp:Label ID="lblbranch" runat="server" Text='<%# Eval("branch") %>'></asp:Label>  
                             </ItemTemplate>  
                         </asp:TemplateField>  
-             <asp:TemplateField HeaderText="AlternateNumber">
-                 <EditItemTemplate>  
-                                <asp:TextBox ID="txtortime" runat="server" Text='<%# Eval("order_received_dt") %>'></asp:TextBox>  
-                            </EditItemTemplate> 
-                <ItemTemplate>  
-                                <asp:Label ID="lblortime" runat="server" Text='<%# Eval("order_received_dt") %>'></asp:Label>  
-                            </ItemTemplate>  
-                        </asp:TemplateField>  
-           <%--  <asp:TemplateField HeaderText="Emailid">
-                 <EditItemTemplate>  
-                                <asp:TextBox ID="txtemid" runat="server" Text='<%# Eval("Emailid") %>'></asp:TextBox>  
-                            </EditItemTemplate> 
-                <ItemTemplate>  
-                                <asp:Label ID="lblemid" runat="server" Text='<%# Eval("Emailid") %>'></asp:Label>  
-                            </ItemTemplate>  
-                        </asp:TemplateField>  --%>
+           
+         
              <asp:TemplateField HeaderText="AlternateEmail">
                  <EditItemTemplate>  
                                 <asp:TextBox ID="txtassto" runat="server" Text='<%# Eval("assignto") %>'></asp:TextBox>  
@@ -170,29 +134,26 @@
                 <ItemTemplate>  
                                 <asp:Label ID="lblassto" runat="server" Text='<%# Eval("assignto") %>'></asp:Label>  
                             </ItemTemplate>  
+                        </asp:TemplateField>
+            <asp:TemplateField HeaderText="Assign By">
+                 <EditItemTemplate>  
+                                <asp:TextBox ID="txtassby" runat="server" Text='<%# Eval("assignby") %>'></asp:TextBox>  
+                            </EditItemTemplate> 
+                <ItemTemplate>  
+                                <asp:Label ID="lblassby" runat="server" Text='<%# Eval("assignby") %>'></asp:Label>  
+                            </ItemTemplate>  
+                        </asp:TemplateField>
+              <asp:TemplateField HeaderText="order_received_dt">
+                 <EditItemTemplate>  
+                                <asp:TextBox ID="orderreceived" runat="server" Text='<%# Eval("order_received_dt") %>'></asp:TextBox>  
+                            </EditItemTemplate> 
+                <ItemTemplate>  
+                                <asp:Label ID="orderreceived" runat="server" Text='<%# Eval("order_received_dt") %>'></asp:Label>  
+                            </ItemTemplate>  
                         </asp:TemplateField>  
-          
-          
-              
               </Columns>
-      
     </asp:GridView>
-         </div>
-   <%--  <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False">
-        <Columns>
-<%--<asp:BoundField DataField="Orderno" HeaderText="OrderNo" />
-<asp:BoundField DataField="Lendername" HeaderText="LenderName" />
-<asp:BoundField DataField="Branch" HeaderText="BranchName" />
- <asp:BoundField DataField="OrderReceivedDateTime" HeaderText="OrderReceivedDateTime" />--%>
- <%--<asp:BoundField DataField="Oredrreceivedtime" HeaderText="OredrReceivedTime" />--%>
-<%--<asp:BoundField DataField="LAreferenceno" HeaderText="LAReferenceNo " />--%>
- <%--<asp:BoundField DataField="LAname" HeaderText="LAName" />
- <asp:BoundField DataField="CAcontactdetailes" HeaderText="CAContactDetailes" />
-  <asp:BoundField DataField="CAadditionaldetailes" HeaderText="CAAdditionalDetailes" />--%>
-   <%--<asp:BoundField DataField="assignto" HeaderText="AssignTo" />--%>
-
-
-
-         
-           
+         </div>         
 </asp:Content>
+
+

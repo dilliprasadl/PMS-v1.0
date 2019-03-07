@@ -13,8 +13,17 @@ namespace PMS1
         {
             if (!IsPostBack)
             {
-                username.Text = Session["user_Name"].ToString();
-                get_menu();
+                try
+                {
+                    username.Text = Session["user_Name"].ToString();
+                    //img.ImageUrl = Session["photo"].ToString();
+                    get_menu();
+                }
+                catch (NullReferenceException)
+                {
+                    Response.Redirect("Login.aspx");
+                    //ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert('Failed to get photo');", true);
+                }
             }
 
         }
@@ -34,6 +43,7 @@ namespace PMS1
             {
                 if (Convert.ToInt32(Session["Roleid"].ToString()) == 1)
                 {
+                    Assignrole.Visible = true;
                     newmenu.Visible = true;
                     newlender.Visible = true;
                     newemp.Visible = true;

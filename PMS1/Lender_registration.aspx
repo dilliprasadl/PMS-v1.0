@@ -10,6 +10,19 @@
 	<link rel="stylesheet" href="assets/css/custom.css" />
 
 	<script src="assets/js/jquery-1.11.3.min.js"></script><script src="scripts/jquerymin.js"></script>
+    <script>
+       <!--
+       function isNumberKey(evt)
+       {
+          var charCode = (evt.which) ? evt.which : event.keyCode
+          if (charCode != 46 && charCode > 31 
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+       }
+       //-->
+        </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:UpdatePanel ID="updatepan1" runat="server" UpdateMode="Conditional">
@@ -35,7 +48,7 @@
 							</div>
 							<div class="col-md-3"> Manager Phone Number
 								<div class="input-group">
-										<asp:TextBox ID="manager_number" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="manager_number" runat="server" CssClass="form-control" MaxLength="10" onkeypress="return isNumberKey(event)"></asp:TextBox>
 									</div>
 							</div>
 							<div class="clear"></div>
@@ -52,7 +65,7 @@
 							</div>						
 							<div class="col-md-3"> Contact Number
 								<div class="input-group">
-										<asp:TextBox ID="lc_number" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="lc_number" runat="server" CssClass="form-control" MaxLength="10" onkeypress="return isNumberKey(event)"></asp:TextBox>
 									</div>
 							</div>
 							<div class="col-md-3"> Contact Email ID
@@ -98,13 +111,13 @@
 							</div>
 							<div class="col-md-3"> Zipcode
 								<div class="input-group">
-										<asp:TextBox ID="branch_zip" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="branch_zip" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event)"></asp:TextBox>
 									</div>
 							</div>
 							<div class="clear"></div><br />
 <p class="bs-example bs-baseline-top">
-    <asp:Button ID="btnsubmit" runat="server" Text="Register" OnClick="btnsubmit_Click" CssClass="btn btn-primary btn-block"/>
-     <asp:Button runat="server" ID="btn_update"  Visible="false" OnClick="btn_update_Click" Text="Update" ValidationGroup="fill" CssClass="btn btn-primary btn-block"/>
+    <asp:Button ID="btnsubmit" runat="server" Text="Register" OnClick="btnsubmit_Click" CssClass="btn btn-primary btn-block" />
+     <%--<asp:Button runat="server" ID="btn_update"  Visible="false" OnClick="btn_update_Click" Text="Update" ValidationGroup="fill" CssClass="btn btn-primary btn-block"/>--%>
 						</p></div>
         </ContentTemplate>
     </asp:UpdatePanel>

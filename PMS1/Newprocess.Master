@@ -76,6 +76,10 @@
                     <ul class="nav navbar-nav">
                         <li class="active">
                             <a href="home.aspx"><i class="menu-icon fa fa-laptop"></i>Home</a>
+                            
+                        </li>
+                         <li class="menu-item-has-children" runat="server" id="Assignrole" visible="false">
+                            <a href="Assignrole.aspx"  aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs"></i>Assign Role</a>
                         </li>
                         <li class="menu-item-has-children" runat="server" id="ordersmenu" visible="false">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs"></i>Orders</a>
@@ -138,7 +142,7 @@
 
                         <div class="user-area dropdown float-right">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar" />
+                                <asp:Image class="user-avatar rounded-circle" id="img" runat="server" alt="User Avatar" Width="40px" Height="40px" />
                                 <asp:Label ID="username" runat="server" Text="Label"></asp:Label>
                             </a>
 

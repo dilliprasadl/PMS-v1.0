@@ -19,6 +19,19 @@
 	<link rel="stylesheet" href="assets/css/custom.css" />
 
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
+    <script>
+       <!--
+       function isNumberKey(evt)
+       {
+          var charCode = (evt.which) ? evt.which : event.keyCode
+          if (charCode != 46 && charCode > 31 
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+       }
+       //-->
+        </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:UpdatePanel ID="updatepan1" runat="server" UpdateMode="Conditional">
@@ -63,14 +76,14 @@
 							<div class="col-md-4"> Primary Phone
 								<div class="input-group">
 										<span class="input-group-addon">♁</span>
-										<asp:TextBox ID="la_phonenumber" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="la_phonenumber" runat="server" CssClass="form-control" MaxLength="10" onkeypress="return isNumberKey(event)"></asp:TextBox>
 									</div>
 							</div><div class="clear"></div>
 							<br />						
 							<div class="col-md-4"> Secondary Phone
 								<div class="input-group">
 										<span class="input-group-addon">♁</span>
-										<asp:TextBox ID="la_phonenumber2" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="la_phonenumber2" runat="server" CssClass="form-control" MaxLength="10" onkeypress="return isNumberKey(event)"></asp:TextBox>
 									</div>
 							</div>
 							<div class="col-md-4"> Primary Email ID
@@ -126,7 +139,7 @@
 							<div class="col-md-4"> Phone Number
 								<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-user"></i></span>
-										<asp:TextBox ID="ca_phone" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="ca_phone" runat="server" CssClass="form-control" MaxLength="10" onkeypress="return isNumberKey(event)"></asp:TextBox>
 									</div>
 							</div>							
 							<div class="col-md-4"> Email ID
@@ -150,7 +163,7 @@
 							<div class="col-md-3"> Phone Number
 								<div class="input-group">
 										<span class="input-group-addon">♁</span>
-										<asp:TextBox ID="scp_number" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="scp_number" runat="server" CssClass="form-control" MaxLength="10" onkeypress="return isNumberKey(event)"></asp:TextBox>
 									</div>
 							</div>							
 							<div class="col-md-3"> Email ID

@@ -228,7 +228,7 @@ namespace PMS1
 
                 }
 
-                else if (e.CommandName.ToString() == "Action to Edit")
+                else if (e.CommandName.ToString() == "Edit")
                 {
                     string[] splitdata = e.CommandArgument.ToString().Split(',');
 
@@ -236,7 +236,7 @@ namespace PMS1
                     int empid = Convert.ToInt16(splitdata[0].ToString());
                     int isact = Convert.ToInt16(splitdata[1].ToString());
 
-                    Response.Redirect("Newemployee.aspx?empid=" + empid, false);
+                    Response.Redirect("editemployee.aspx?empid=" + empid, false);
                 }
                 else if (e.CommandName.ToString()=="ResetPassword")
                 {

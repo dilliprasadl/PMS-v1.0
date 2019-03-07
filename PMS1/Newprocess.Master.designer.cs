@@ -40,6 +40,15 @@ namespace PMS1 {
         protected global::System.Web.UI.ScriptManager srptmngr;
         
         /// <summary>
+        /// Assignrole control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Assignrole;
+        
+        /// <summary>
         /// ordersmenu control.
         /// </summary>
         /// <remarks>
@@ -191,6 +200,15 @@ namespace PMS1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl teampipeline;
+        
+        /// <summary>
+        /// img control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image img;
         
         /// <summary>
         /// username control.

@@ -118,7 +118,7 @@ namespace PMS1
         {
             try
             {
-                if (e.CommandName.ToString() == "ActiontoEdit")
+                if (e.CommandName.ToString() == "takeorder")
                 {
                     string[] splitdata = e.CommandArgument.ToString().Split(',');
 
@@ -126,7 +126,7 @@ namespace PMS1
                     int order_id = Convert.ToInt16(splitdata[0].ToString());
 
 
-                    Response.Redirect("New_orders.aspx?order_id=" + order_id, false);
+                    Response.Redirect("OrderTask.aspx?order_id=" + order_id, false);
                 }
             }
             catch (Exception ex)

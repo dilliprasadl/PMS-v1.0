@@ -47,6 +47,7 @@ namespace PMS1
 
 
                 string UserName = (string)dr["UserName"];
+                //string photopath = (string)dr["photo"];
 
                 int user_id = (int)dr["Employeeid"];
 
@@ -59,6 +60,8 @@ namespace PMS1
                 Session["User_id"] = user_id;
 
                  Session["Roleid"] = Role_id;
+               // Session["photo"] = photopath;
+                
 
 
 

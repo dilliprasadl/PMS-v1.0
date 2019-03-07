@@ -12,87 +12,20 @@
 	<link rel="stylesheet" href="assets/css/custom.css" />
 
 	<script src="assets/js/jquery-1.11.3.min.js"></script><script src="scripts/jquerymin.js"></script>
-    <script type="text/javascript">
+    <script>
+       <!--
+       function isNumberKey(evt)
+       {
+          var charCode = (evt.which) ? evt.which : event.keyCode
+          if (charCode != 46 && charCode > 31 
+            && (charCode < 48 || charCode > 57))
+             return false;
 
-        var specialKeys = new Array();
-
-        specialKeys.push(8); //Backspace
-
-        $(function () {
-
-            $(".numeric").bind("keypress", function (e) {
-
-                var keyCode = e.which ? e.which : e.keyCode
-
-                var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
-
-                $(".error").css("display", ret ? "none" : "inline");
-
-                return ret;
-
-            });
-
-            $(".numeric").bind("paste", function (e) {
-
-                return false;
-
-            });
-
-            $(".numeric").bind("drop", function (e) {
-
-                return false;
-
-            });
-
-        });
-
+          return true;
+       }
+       //-->
         </script>
-
-
-
-    <script type="text/javascript">
-
-
-
-        function onlyAlphabets(e, t) {
-
-            try {
-
-                if (window.event) {
-
-                    var charCode = window.event.keyCode;
-
-                }
-
-                else if (e) {
-
-                    var charCode = e.which;
-
-                }
-
-                else { return true; }
-
-                if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
-
-                    return true;
-
-                else
-
-                    return false;
-
-            }
-
-            catch (err) {
-
-                alert(err.Description);
-
-            }
-
-        }
-
-
-
-    </script>
+      
 
 </asp:Content>
 
@@ -108,20 +41,23 @@
 					<h3>1. Personal Information</h3>
 				</div>
 			</div><br  />
-							<div class="col-md-3"> First Name
-								<div class="input-group">
+							<div class="col-md-3"> First Name <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="fill" ControlToValidate="txtfname" ErrorMessage="*" ForeColor="Red" Font-Bold="true"></asp:RequiredFieldValidator>
+&nbsp;<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-user"></i></span>
-                                    <asp:TextBox ID="txtfname" runat="server" CssClass="form-control"></asp:TextBox>
+                      
+                                    <asp:TextBox ID="txtfname" runat="server"  CssClass="form-control"></asp:TextBox>
+                                    
 									</div>
 							</div>							
-							<div class="col-md-3"> Last Name
+							<div class="col-md-3"> Last Name <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="fill" ErrorMessage="*" ForeColor="Red" Font-Bold="true" ControlToValidate="txtlaname"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-user"></i></span>
                                     <asp:TextBox ID="txtlaname" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>							
 							<div class="col-md-3"> Gender
-								<div class="input-group">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="ddlselect" ValidationGroup="fill" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<div class="input-group">
 										<span class="input-group-addon">♁</span>
                                     <asp:DropDownList ID="ddlselect" runat="server" CssClass="form-control">
                                         <asp:ListItem Value="0">--SELECT--</asp:ListItem>
@@ -132,89 +68,103 @@
                                     </asp:DropDownList>
 									</div>
 							</div>
-							<div class="col-md-3"> Please Enter in (YYYY-MM-DD) Format
-								<div class="input-group">
+							<div class="col-md-3"> Date of Birth<asp:RequiredFieldValidator ID="RequiredFieldValidator4" ValidationGroup="fill" runat="server" ControlToValidate="txtdob" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+&nbsp;<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-clipboard"></i></span>
-                                    <asp:TextBox ID="txtdob" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtdob" runat="server" placeholder="YYYY-MM-DD" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>
 							<div class="clear"></div>
 							<br />
-							<div class="col-md-3"> Primary Mobile
-								<div class="input-group">
+							<div class="col-md-3"> Primary Mobile <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ValidationGroup="fill" runat="server" ControlToValidate="txtmnumber" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+&nbsp;<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-phone"></i></span>
-                                    <asp:TextBox ID="txtmnumber" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtmnumber" runat="server" CssClass="form-control" MaxLength="10" onkeypress="return isNumberKey(event)"></asp:TextBox>
+                                    
 									</div>
 							</div>
-							<div class="col-md-3"> Secondary Mobile
-								<div class="input-group">
+							<div class="col-md-3"> Secondary Mobile 
+								<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ValidationGroup="fill" ControlToValidate="txtanumber" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-phone"></i></span>
-                                    <asp:TextBox ID="txtanumber" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtanumber" runat="server" CssClass="form-control" MaxLength="10" onkeypress="return isNumberKey(event)"></asp:TextBox>
 									</div>
 							</div>						
 							<div class="col-md-3"> Primary Email ID
-								<div class="input-group">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ValidationGroup="fill" ControlToValidate="txtemail" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-mail"></i></span>
                                     <asp:TextBox ID="txtemail" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>
 							<div class="col-md-3"> Alternate Email ID
-								<div class="input-group">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ValidationGroup="fill" ControlToValidate="txtaemail" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-mail"></i></span>
                                     <asp:TextBox ID="txtaemail" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>
 							<div class="clear"></div><br />
 							<div class="col-md-3"> Father Name
-								<div class="input-group">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ValidationGroup="fill" ControlToValidate="txtfaname" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-users"></i></span>
                                     <asp:TextBox ID="txtfaname" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>			
-							<div class="col-md-3"> Mother Name
-								<div class="input-group">
+							<div class="col-md-3"> Mother Name&nbsp;
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ValidationGroup="fill" ControlToValidate="txtmoname" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-users"></i></span>
 										<asp:TextBox ID="txtmoname" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>							
 							<div class="col-md-3"> Aadhaar Number
-								<div class="input-group">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ValidationGroup="fill" ControlToValidate="txtacno" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-book"></i></span>
 										<asp:TextBox ID="txtacno" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>	
-							<div class="col-md-3"> PAN Card Number
+							<div class="col-md-3"> PAN Card Number 
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ValidationGroup="fill" ControlToValidate="txtpcno" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-book"></i></span>
 										<asp:TextBox ID="txtpcno" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div><div class="clear"></div><br />
-							<div class="col-md-3"> Passport ID
+							<div class="col-md-3"> Passport ID <asp:RequiredFieldValidator ID="RequiredFieldValidator13" ValidationGroup="fill" runat="server" ControlToValidate="txtpassno" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon"><i class="entypo-book"></i></span>
 										<asp:TextBox ID="txtpassno" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>			
 							<div class="col-md-3"> Username
-								<div class="input-group">
+								<asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ValidationGroup="fill" ControlToValidate="txtuname" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<div class="input-group">
 										<span class="input-group-addon">@</span>
 										<asp:TextBox ID="txtuname" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>
 							<div class="col-md-3"> Password
-								<div class="input-group">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ValidationGroup="fill" ControlToValidate="txtpwd" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<div class="input-group">
 										<span class="input-group-addon">★</span>
 										<asp:TextBox ID="txtpwd" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div><div class="clear"></div><br />
 							<div class="form-group">
 							<div class="col-md-6"> Upload Photo
-								<asp:FileUpload ID="uploadphoto" runat="server" />
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required Field" ControlToValidate="uploadphoto"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ValidationGroup="fill" ControlToValidate="uploadphoto" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<asp:FileUpload ID="uploadphoto" runat="server" /><br />
+                                
+                                
 							</div>
 							<div class="col-md-6"> Upload Other Files
-								<asp:FileUpload ID="Uploadofiles" runat="server"/>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Required Field" ControlToValidate="Uploadofiles"></asp:RequiredFieldValidator>
+								<asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ValidationGroup="fill" ControlToValidate="Uploadofiles" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<asp:FileUpload ID="Uploadofiles" runat="server"/><br />
+                               
+                               
 							</div>
 							<div class="clear"></div><br />
 							<div class="panel-heading">
@@ -227,7 +177,8 @@
 									</div>
 							</div>							
 							<div class="col-md-3"> Expertize Level
-								<div class="input-group"><span class="input-group-addon"><i class="entypo-chart-bar"></i></span>
+								<asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ValidationGroup="fill" ControlToValidate="txtpassno" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<div class="input-group"><span class="input-group-addon"><i class="entypo-chart-bar"></i></span>
 									<asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control">
                                         <asp:ListItem Value="0">--SELECT--</asp:ListItem>
                                         <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
@@ -245,7 +196,8 @@
 									</div>
 							</div>
 							<div class="col-md-3"> Expertize Level
-								<div class="input-group"><span class="input-group-addon"><i class="entypo-chart-bar"></i></span>
+								<asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ValidationGroup="fill" ControlToValidate="txtpassno" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<div class="input-group"><span class="input-group-addon"><i class="entypo-chart-bar"></i></span>
 									<asp:DropDownList ID="DropDownList4" runat="server" CssClass="form-control">
                                         <asp:ListItem Value="0">--SELECT--</asp:ListItem>
                                         <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
@@ -259,8 +211,9 @@
 							</div>	
 							<div class="clear"></div>
 							<br />
-							<div class="col-md-3"> Additional Language 1
-								<div class="input-group"><span class="input-group-addon">௹</span>
+							<div class="col-md-3"> Additional Languages
+								<asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ValidationGroup="fill" ControlToValidate="txtpassno" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<div class="input-group"><span class="input-group-addon">௹</span>
 									<asp:DropDownList ID="DropDownList5" runat="server" CssClass="form-control">
                                         <asp:ListItem Value="0">--SELECT--</asp:ListItem>
                                         <asp:ListItem Value="Kannada">Kannada</asp:ListItem>
@@ -270,40 +223,7 @@
 									
 									</div>
 							</div>
-							<div class="col-md-3"> Expertize Level
-								<div class="input-group"><span class="input-group-addon"><i class="entypo-chart-bar"></i></span>
-									<asp:DropDownList ID="DropDownList6" runat="server" CssClass="form-control">
-                                        <asp:ListItem Value="0">--SELECT--</asp:ListItem>
-                                        <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
-                                        <asp:ListItem Value="Conversational">Conversational</asp:ListItem>
-                                        <asp:ListItem Value="Fluent">Fluent</asp:ListItem>
-                                        <asp:ListItem Value="Expert">Expert</asp:ListItem>
-                                    </asp:DropDownList>
-									
-									</div>
-							</div>								
-							<div class="col-md-3"> Additional Language 2
-								<div class="input-group"><span class="input-group-addon">௹</span>
-									<asp:DropDownList ID="DropDownList7" runat="server" CssClass="form-control">
-                                        <asp:ListItem Value="0">--SELECT--</asp:ListItem>
-                                        <asp:ListItem Value="Kannada">Kannada</asp:ListItem>
-                                        <asp:ListItem Value="Telugu">Telugu</asp:ListItem>
-                                        <asp:ListItem Value="Tamil">Tamil</asp:ListItem>
-                                    </asp:DropDownList>
-									</div>
-							</div>
-							<div class="col-md-3"> Expertize Level
-								<div class="input-group"><span class="input-group-addon"><i class="entypo-chart-bar"></i></span>
-									<asp:DropDownList ID="DropDownList8" runat="server" CssClass="form-control">
-                                        <asp:ListItem Value="0">--SELECT--</asp:ListItem>
-                                        <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
-                                        <asp:ListItem Value="Conversational">Conversational</asp:ListItem>
-                                        <asp:ListItem Value="Fluent">Fluent</asp:ListItem>
-                                        <asp:ListItem Value="Expert">Expert</asp:ListItem>
-                                    </asp:DropDownList>
-									</div>
-							</div>	
-							<div class="clear"></div><br />
+							
 			
 <%--<table><tr>
                   <td colspan="9">
@@ -364,19 +284,22 @@
 					<h3>3. Office Address</h3>
 				</div>
 			</div><br />
-							<div class="col-md-4"> Address Line 1
+							<div class="col-md-4"> Address Line 1 
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ValidationGroup="fill" ControlToValidate="txtoaline1" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">🏠</span>
                                     <asp:TextBox ID="txtoaline1" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>							
 							<div class="col-md-4"> Address Line 2
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator22" runat="server" ValidationGroup="fill" ControlToValidate="txtoaline2" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">📍</span>
                                     <asp:TextBox ID="txtoaline2" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>					
 							<div class="col-md-4"> City
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator23" runat="server" ValidationGroup="fill" ControlToValidate="txtocity" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">🏢</span>
                                     <asp:TextBox ID="txtocity" runat="server" CssClass="form-control"></asp:TextBox>
@@ -384,20 +307,23 @@
 							</div><div class="clear"></div>
 							<br />
 							<div class="col-md-4"> State
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator24" runat="server" ValidationGroup="fill" ControlToValidate="txtostate" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
-										<span class="input-group-addon">🌍</span>
+										<span class="input-group-addon">🗺</span>
                                     <asp:TextBox ID="txtostate" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div><div class="col-md-4"> Country
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator25" runat="server" ValidationGroup="fill" ControlToValidate="txtocountry" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
-										<span class="input-group-addon">🗺</span>
+										<span class="input-group-addon">🌍</span>
                                     <asp:TextBox ID="txtocountry" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>
 							<div class="col-md-4"> Zipcode
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator26" runat="server" ValidationGroup="fill" ControlToValidate="txtozcode" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">🔢</span>
-                                    <asp:TextBox ID="txtozcode" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtozcode" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event)"></asp:TextBox>
 									</div>
 							</div><div class="clear"></div><br /><div class="panel-heading">
 				<div class="panel-title">
@@ -405,89 +331,97 @@
 				</div>
 			</div><br />
 							<div class="col-md-4"> Address Line 1
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator27" runat="server" ValidationGroup="fill" ControlToValidate="txtraline1" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">🏠</span>
-										<asp:TextBox ID="txtraline1" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="txtraline1" name = "txtraline1" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>							
 							<div class="col-md-4"> Address Line 2
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator28" runat="server" ValidationGroup="fill" ControlToValidate="txtraline2" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">📍</span>
-										<asp:TextBox ID="txtraline2" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="txtraline2" name = "txtraline2" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>					
 							<div class="col-md-4"> City
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator29" runat="server" ValidationGroup="fill" ControlToValidate="txtrcity" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">🏢</span>
-										<asp:TextBox ID="txtrcity" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="txtrcity" name = "txtrcity" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div><div class="clear"></div>
 							<br />
 							<div class="col-md-4"> State
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator30" runat="server" ValidationGroup="fill" ControlToValidate="txtrstate" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">🌍</span>
-										<asp:TextBox ID="txtrstate" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="txtrstate" name = "txtrstate" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div><div class="col-md-4"> Country
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator31" runat="server" ValidationGroup="fill" ControlToValidate="txtrcountry" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">🗺</span>
-										<asp:TextBox ID="txtrcountry" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="txtrcountry" name = "txtrcountry" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>
 							<div class="col-md-4"> Zipcode
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator32" runat="server" ValidationGroup="fill" ControlToValidate="txtrzcode" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">🔢</span>
-										<asp:TextBox ID="txtrzcode" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="txtrzcode" name = "txtrzcode" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event)"></asp:TextBox>
 									</div>
-							</div><div class="clear"></div><br /><div class="panel-heading">
-				<div class="panel-title">
+							</div><div class="clear"></div><br />
+				
+           
 					
-					
-                    <asp:CheckBox ID="copy" runat="server" />
-<em>Check this box if Residential Address and Permanent Address are the same.</em><br /><br />
+                   <div class="panel-heading">
 					<h3>5. Permanent Address</h3>
-				</div>
 			</div><br />
 							<div class="col-md-4"> Address Line 1
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator33" runat="server" ValidationGroup="fill" ControlToValidate="txtpaline1" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">🏠</span>
-										<asp:TextBox ID="txtpaline1" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="txtpaline1" name = "txtpaline1" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>							
 							<div class="col-md-4"> Address Line 2
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator34" runat="server" ValidationGroup="fill" ControlToValidate="txtpaline2" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">📍</span>
-										<asp:TextBox ID="txtpaline2" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="txtpaline2" name = "txtpaline2" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>					
 							<div class="col-md-4"> City
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator35" runat="server" ValidationGroup="fill" ControlToValidate="txtpcity" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">🏢</span>
-										<asp:TextBox ID="txtpcity" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="txtpcity" name = "txtpcity" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div><div class="clear"></div>
 							<br />
 							<div class="col-md-4"> State
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator36" runat="server" ValidationGroup="fill" ControlToValidate="txtpstate" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">🌍</span>
-										<asp:TextBox ID="txtpstate" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="txtpstate" name = "txtpstate" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div><div class="col-md-4"> Country
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator37" runat="server" ValidationGroup="fill" ControlToValidate="txtpcountry" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">🗺</span>
-										<asp:TextBox ID="txtpcountry" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="txtpcountry" name = "txtpcountry" runat="server" CssClass="form-control"></asp:TextBox>
 									</div>
 							</div>
 							<div class="col-md-4"> Zipcode
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator38" runat="server" ValidationGroup="fill" ControlToValidate="txtpzcode" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
 								<div class="input-group">
 										<span class="input-group-addon">🔢</span>
-										<asp:TextBox ID="txtpzcode" runat="server" CssClass="form-control"></asp:TextBox>
+										<asp:TextBox ID="txtpzcode" name = "txtpzcode" runat="server"  CssClass="form-control" onkeypress="return isNumberKey(event)"></asp:TextBox>
 									</div>
 							</div><div class="clear"></div><br />
 						</div><p class="bs-example bs-baseline-top">
-                            <asp:Button runat="server" ID="btnbutton" Visible="false" OnClick="btnbutton_Click" Text="Submit" ValidationGroup="fill" CssClass="btn btn-primary btn-block" />
-
-                                <asp:Button runat="server" ID="btn_update"  Visible="false" OnClick="btn_update_Click" Text="Update" ValidationGroup="fill" CssClass="btn btn-primary btn-block"/>
+                            <asp:Button runat="server" ID="btnbutton" OnClick="btnbutton_Click" Text="Submit" ValidationGroup="fill" CssClass="btn btn-primary btn-block" />
 						</p>
 					</div>
 		        		

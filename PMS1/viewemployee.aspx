@@ -16,6 +16,9 @@
      <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet"/>
      <link href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css" rel="stylesheet"/>
 
+	<link rel="stylesheet" type="text/css" href="TableStyles/TableStyle.css" />
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' />
+   
     <script>
 
         $(document).ready(function () {
@@ -37,55 +40,55 @@
      <asp:Button ID="btncsv" runat="server" Text="CSV" OnClick="btncsv_Click" style="display:none" />
 
     <%--order-column--%> 
-    <table id="example" class="display nowrap;" style="width:100%;padding:1Px">
+    <table id="example" class="table-fill">
         <thead>
            <tr>
-                <th>S No</th>
-                <th>Status</th>
-                <th>First Name</th>
-                <th>Gender</th>
-                <th>Mobile Number</th>
-                <th>Alternate Number</th>
-                <th>EmailId</th>
-                <th>Status Action</th>
-                <th>Action to Edit</th>
-               <th>Reset Password</th>
+                <th class="text-left">S No</th>
+                <th class="text-left">Status</th>
+                <th class="text-left">First Name</th>
+                <th class="text-left">Gender</th>
+                <th class="text-left">Mobile Number</th>
+                <th class="text-left">Alternate Number</th>
+                <th class="text-left">EmailId</th>
+                <th class="text-left">Status Action</th>
+                <th class="text-left">Edit</th>
+               <th class="text-left">Reset Password</th>
             </tr>
         </thead>
         <tbody>
-<asp:Repeater ID="GridView1" runat="server" OnItemCommand="GridView1_ItemCommand">
+<asp:Repeater ID="GridView1" runat="server" OnItemCommand="GridView1_ItemCommand" EnableTheming="True">
       <ItemTemplate>
      
       <tr>
-          <td>
+          <td class="text-left">
                <%# Container.ItemIndex+1 %>
                <asp:HiddenField runat="server" ID="HiddenField1" Value='<%#Eval("Employeeid") %>' />
           </td>
-          <td>
+          <td class="text-left">
               <asp:Label runat="server" ID="lbid"  Text='<%#Eval("Statuss") %>'></asp:Label>
           </td>
           <td>
                 <asp:Label ID="lblfname" runat="server" Text='<%# Eval("firstname") %>'></asp:Label>  
-          </td>
-          <td>
+          </td >
+          <td class="text-left">
               <asp:Label ID="lblgender" runat="server" Text='<%# Eval("Gender") %>'></asp:Label>  
           </td>
-          <td>
+          <td class="text-left">
                <asp:Label ID="lblmnumber" runat="server" Text='<%# Eval("Mobilenumber") %>'></asp:Label>  
           </td>
-          <td>
+          <td class="text-left">
                <asp:Label ID="Label1" runat="server" Text='<%# Eval("Alternatenumber") %>'></asp:Label>  
           </td>
-          <td>
+          <td class="text-left">
               <asp:Label ID="lbleid" runat="server" Text='<%# Eval("Emailid") %>'></asp:Label>  
           </td>
-          <td>
+          <td class="text-left">
                 <asp:LinkButton runat="server" ID="lnkbtn" CommandName="Active" CommandArgument='<%#Eval("Employeeid")+","+Eval("isactive") %>' Text='<%#(Convert.ToInt32(Eval("isactive")))==1?"Click Here Deactivate":"Click To Active" %>'></asp:LinkButton>
           </td>
-          <td>
-               <asp:LinkButton runat="server" ID="lnkbtnedt" CommandName="Action to Edit" CommandArgument='<%#Eval("Employeeid")+","+Eval("isactive") %>' Text="Click to update"></asp:LinkButton>
+          <td class="text-left">
+               <asp:LinkButton runat="server" ID="lnkbtnedt" CommandName="Edit" CommandArgument='<%#Eval("Employeeid")+","+Eval("isactive") %>' Text=""><i class='fas fa-edit'></i></asp:LinkButton>
           </td>
-          <td>
+          <td class="text-left">
                <asp:LinkButton runat="server" ID="lblreset" CommandName="ResetPassword" CommandArgument='<%#Eval("Employeeid") %>' Text="ResetPassword"></asp:LinkButton>
           </td>
       </tr>
@@ -93,10 +96,13 @@
         </asp:Repeater>   
         </tbody>
     </table> 
+                       
+   
     <div style="display:none">
     <asp:GridView ID="Grd_downlod" runat="server" AutoGenerateColumns="False">
       
          <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+         <AlternatingRowStyle CssClass="alt" />
          <Columns>
  
                   <asp:TemplateField HeaderText="S No">
