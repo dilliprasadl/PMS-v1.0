@@ -13,13 +13,22 @@ namespace PMS1 {
     public partial class unassigned {
         
         /// <summary>
-        /// ddlnames control.
+        /// txtsearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlnames;
+        protected global::System.Web.UI.WebControls.TextBox txtsearch;
+        
+        /// <summary>
+        /// hfOrderNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfOrderNo;
         
         /// <summary>
         /// btnassign control.

@@ -22,7 +22,7 @@ namespace PMS1
         {
             
             //SqlConnection con = new SqlConnection(strcon);
-            SqlCommand com = new SqlCommand("sploginpage", con);
+            SqlCommand com = new SqlCommand("login", con);
             com.CommandType = System.Data.CommandType.StoredProcedure;
             SqlParameter sp1 = new SqlParameter("@UserName", txtuname.Text);
             SqlParameter sp2 = new SqlParameter("@Password", txtpwd.Text);

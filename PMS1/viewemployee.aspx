@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="PMS | View Employee" Language="C#" MasterPageFile="~/Newprocess.Master" AutoEventWireup="true" CodeBehind="viewemployee.aspx.cs" Inherits="PMS1.viewemployee" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="http://ajax.goselect * from newemployee
+select * from MasterRoleogleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>   
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

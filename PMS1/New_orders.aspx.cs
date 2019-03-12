@@ -75,7 +75,7 @@ namespace PMS1
                 SqlConnection con = new SqlConnection("Data Source=DESKTOP-RIBI1U4\\SQLEXPRESS;Initial Catalog=PMS v1.0;Integrated Security=True");
                 {
 
-                    SqlCommand com = new SqlCommand("insert_neworder", con);
+                    SqlCommand com = new SqlCommand("new_order", con);
                     com.CommandType = System.Data.CommandType.StoredProcedure;
 
                     com.Parameters.AddWithValue("@lender_name", lender_name.Text);
