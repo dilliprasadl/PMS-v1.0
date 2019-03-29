@@ -12,26 +12,20 @@
 	<link rel="stylesheet" href="assets/css/custom.css" />
 
 	<script src="assets/js/jquery-1.11.3.min.js"></script><script src="scripts/jquerymin.js"></script>
-    <script>
-       <!--
+    <script>    
        function isNumberKey(evt)
        {
           var charCode = (evt.which) ? evt.which : event.keyCode
           if (charCode != 46 && charCode > 31 
             && (charCode < 48 || charCode > 57))
              return false;
-
           return true;
        }
-       //-->
         </script>
-      
-
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:UpdatePanel ID="updatepan1" runat="server" UpdateMode="Conditional">
-        
         <ContentTemplate>
     <div class="main-content">
 		<h2>NEW EMPLOYEE REGISTRATION</h2>
@@ -173,13 +167,13 @@
 				</div>
 			</div><br /><div class="col-md-3"> Primary Language 1
 								<div class="input-group"><span class="input-group-addon">௹</span>
-                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" value="English" Enabled="false"></asp:TextBox>
+                                    <asp:TextBox ID="txtplan1" runat="server" CssClass="form-control" value="English" Enabled="false"></asp:TextBox>
 									</div>
 							</div>							
 							<div class="col-md-3"> Expertize Level
 								<asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ValidationGroup="fill" ControlToValidate="txtpassno" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                                 &nbsp;<div class="input-group"><span class="input-group-addon"><i class="entypo-chart-bar"></i></span>
-									<asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control">
+									<asp:DropDownList ID="ddlElevel1" runat="server" CssClass="form-control">
                                         <asp:ListItem Value="0">--SELECT--</asp:ListItem>
                                         <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
                                         <asp:ListItem Value="Conversational">Conversational</asp:ListItem>
@@ -191,14 +185,14 @@
 							</div>									
 							<div class="col-md-3"> Primary Language 2
 								<div class="input-group"><span class="input-group-addon">௹</span>
-									<asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" value="Hindi" Enabled="false"></asp:TextBox>
+									<asp:TextBox ID="txtplan2" runat="server" CssClass="form-control" value="Hindi" Enabled="false"></asp:TextBox>
 									
 									</div>
 							</div>
 							<div class="col-md-3"> Expertize Level
 								<asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ValidationGroup="fill" ControlToValidate="txtpassno" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                                 &nbsp;<div class="input-group"><span class="input-group-addon"><i class="entypo-chart-bar"></i></span>
-									<asp:DropDownList ID="DropDownList4" runat="server" CssClass="form-control">
+									<asp:DropDownList ID="ddlExlevel2" runat="server" CssClass="form-control">
                                         <asp:ListItem Value="0">--SELECT--</asp:ListItem>
                                         <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
                                         <asp:ListItem Value="Conversational">Conversational</asp:ListItem>
@@ -211,10 +205,39 @@
 							</div>	
 							<div class="clear"></div>
 							<br />
+                                <asp:Repeater ID="langrepeater" runat="server" OnItemCommand="langrepeater_ItemCommand">
+                                    <HeaderTemplate>
+                                        <table width="300px" border="1px">
+                                            <tr>
+                                                <td>S.No</td>
+                                                <td>Language Name</td>
+                                                <td>Expertise level</td>
+                                                <td>Options</td>
+                                            </tr>
+
+                                        </table>
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <tr>
+                                            <tb>
+                                                <%# Container.ItemIndex+1 %>
+                                            </tb>
+                                            <td>
+                                                <asp:Label runat="server" ID="lbid" Text='<%#("languagename") %>'></asp:Label>
+                                            </td>
+                                            <td>
+                                                <asp:Label runat="server" ID="lblfname" Text='<%#("Expertise") %>'></asp:Label>
+                                            </td>
+                                            <td>
+                                                <asp:LinkButton ID="lnkRemove" CommandName="delete" CommandArgument='<%#Eval("sno")+"^"+Eval("Employeeid") %>' runat="server"  OnClientClick='javascript:return confirm("Are you sure you want to delete?")'>Delete</asp:LinkButton>
+                                            </td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>
 							<div class="col-md-3"> Additional Languages
 								<asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ValidationGroup="fill" ControlToValidate="txtpassno" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
                                 &nbsp;<div class="input-group"><span class="input-group-addon">௹</span>
-									<asp:DropDownList ID="DropDownList5" runat="server" CssClass="form-control">
+									<asp:DropDownList ID="ddlalan1" runat="server" CssClass="form-control">
                                         <asp:ListItem Value="0">--SELECT--</asp:ListItem>
                                         <asp:ListItem Value="Kannada">Kannada</asp:ListItem>
                                         <asp:ListItem Value="Telugu">Telugu</asp:ListItem>
@@ -223,63 +246,25 @@
 									
 									</div>
 							</div>
-							
-			
-<%--<table><tr>
-                  <td colspan="9">
-                      <asp:GridView ID="gv1" runat="server" BackColor="LightGoldenrodYellow"  BorderColor="Tan" BorderWidth="1px" CellPadding="2"  AutoGenerateColumns="false" ForeColor="Black" GridLines="None">
-                      <AlternatingRowStyle BackColor="PaleGoldenrod" />
-                      <Columns>
-                      <asp:TemplateField HeaderText="S No">
-                      <ItemTemplate>
-                      <%#Container.DataItemIndex+1 %>
-                      </ItemTemplate>
-                      </asp:TemplateField>                       
-                      <asp:BoundField DataField="languagename" HeaderText="Language Name" />
-                      <asp:BoundField DataField="Expertise" HeaderText="Expertise level" />
-                      </Columns>
-                      <FooterStyle BackColor="Tan" />
-                      <HeaderStyle BackColor="Tan" Font-Bold="True" />
-                      <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
-                      <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
-                      <SortedAscendingCellStyle BackColor="#FAFAE7" />
-                      <SortedAscendingHeaderStyle BackColor="#DAC09E" />
-                      <SortedDescendingCellStyle BackColor="#E1DB9C" />
-                      <SortedDescendingHeaderStyle BackColor="#C2A47B" />
-                      </asp:GridView>  
-                            </td>
-                   </tr>
-                    
-                     <tr><td>Language Known</td><td>:</td>
-                         <td>
-                           
-							
-                               <asp:TextBox runat="server" ID="txtlknown"  onkeypress="return onlyAlphabets(event,this);" CssClass="form-control"></asp:TextBox>
-                        
-                                 </td>
-                         </tr>
-                         
-
-                              </tr>  
-
-                    <tr>
-                        <td>Expertise Level</td>
-                        <td>:</td>
-                        <td colspan="4">
-                            <asp:RadioButtonList ID="rblelevel" runat="server" RepeatDirection="Horizontal">
-                                <asp:ListItem>Basic</asp:ListItem>
-                                <asp:ListItem>Fluent</asp:ListItem>
-                                <asp:ListItem>Expert</asp:ListItem>
-                            </asp:RadioButtonList>
-                        </td>
-                        <td>
-                            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add" />
-                        </td>
-    </tr>
-                                </table>--%>
-
-                                </div><br />
-							<div class="panel-heading">
+                                <div class="col-md-3"> Expertize Level
+								<asp:RequiredFieldValidator ID="RequiredFieldValidator39" runat="server" ValidationGroup="fill" ControlToValidate="txtpassno" ErrorMessage="*" Font-Bold="true" ForeColor="Red"></asp:RequiredFieldValidator>
+                                &nbsp;<div class="input-group"><span class="input-group-addon"><i class="entypo-chart-bar"></i></span>
+									<asp:DropDownList ID="ddleleveladdleng" runat="server" CssClass="form-control">
+                                        <asp:ListItem Value="0">--SELECT--</asp:ListItem>
+                                        <asp:ListItem Value="Beginner">Beginner</asp:ListItem>
+                                        <asp:ListItem Value="Conversational">Conversational</asp:ListItem>
+                                        <asp:ListItem Value="Fluent">Fluent</asp:ListItem>
+                                        <asp:ListItem Value="Expert">Expert</asp:ListItem>
+                                    </asp:DropDownList>
+									
+									
+									</div>
+							</div>
+                                
+                                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click"  Text="Add Language" />
+							</div>
+                                <br />
+                                <div class="panel-heading">
 				<div class="panel-title">
 					<h3>3. Office Address</h3>
 				</div>

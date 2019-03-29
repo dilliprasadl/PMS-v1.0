@@ -18,16 +18,6 @@ namespace BAL
         {
             return dal.dashboard_count();
         }
-
-        //subject_enty subenty = new subject_enty();
-
-
-        //public int langes_insert(string language,string  experties_lvl,int Createdby)
-        //{
-        //return dal.langes_insert(language, experties_lvl, Createdby);
-        //    }
-
-
         public DataTable GetEmpLagByEmpId(int empid)
         {
             return dal.GetEmpLagByEmpId(empid);
@@ -40,11 +30,11 @@ namespace BAL
         {
             return dal.EmpSequenceId();
         }
-        //public int Delete_Lang(int sno,int empId)
+        public int Delete_Lang(int sno,int empId)
 
-        //{
-        //    return dal.Delete_Lang(sno,empId);
-        //}
+        {
+            return dal.Delete_Lang(sno,empId);
+        }
         public DataSet Getempedit(int empid)
         {
             return dal.Getempedit(empid);

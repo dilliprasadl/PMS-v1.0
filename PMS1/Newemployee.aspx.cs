@@ -14,20 +14,23 @@ namespace PMS1
 {
     public partial class Newemployee : System.Web.UI.Page
     {
-        
-        //Bal_connection bal = new Bal_connection();
 
-        //subject_enty entty = new subject_enty();
-        //Employee_entity empenty = new Employee_entity();
-
-        //object employeeSequenceId;
-        //DataSet dtst;
-        //int empid;
+        Bal_connection bal = new Bal_connection();
+        subject_enty entty = new subject_enty();
+        object employeeSequenceId;
 
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-RIBI1U4\\SQLEXPRESS;Initial Catalog=PMS v1.0;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if(!IsPostBack)
+            {
+                ViewState["Langadd"] = "0";
+                ViewState["Langadd"] = "2";
+            }
+            else
+            {
+                ViewState["Langadd"] = "1";
+            }
         }
         protected void btnbutton_Click(object sender, EventArgs e)
         {
@@ -101,9 +104,8 @@ namespace PMS1
                 throw ex;
             }
         }
-
-        private void upload_photo()
-        {
+private void upload_photo()
+    {
             if (uploadphoto.HasFile)
             {
                 try
@@ -150,8 +152,127 @@ namespace PMS1
             }
 
         }
+        private void Bindlang()
+        {
+            SqlCommand com = new SqlCommand();
+            try
+            {
+                com.Connection = con;
+                com.CommandType = CommandType.StoredProcedure;
+                com.CommandText = "viewlang";
+                if (ViewState["Langadd"].ToString() == "1")
+                {
+                    com.Parameters.AddWithValue("@Employeeid", Convert.ToInt32(ViewState["empseque"]));
+                }
+                else if (ViewState["Langadd"].ToString() == "2")
+                {
+                    com.Parameters.AddWithValue("@Employeeid", Convert.ToInt32(ViewState["empid"]));
+                }
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable ds = new DataTable();
+                da.Fill(ds);
+                langrepeater.DataSource = ds;
+                langrepeater.DataBind();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                com.Dispose();
+            }
+        }
+        private void AddLanguages(string languageName, string languEcperti)
+
+        {
+
+            try
+            {
+                entty.language = languageName;
+                entty.experties = languEcperti;
+                entty.userid = Convert.ToInt32(Session["User_id"]);
+                #region while new employee registration condition comes adding languages for employee id
+                if (ViewState["Langadd"].ToString() == "1")
+                {
+                    entty.Empsequence = Convert.ToInt32(ViewState["empseque"].ToString());
+                }
+                #endregion
+                #region while update condition comes adding languages for  existing employee id
+                else if (ViewState["Langadd"].ToString() == "2")
+                {
+                    entty.Empsequence = Convert.ToInt32(ViewState["empid"].ToString());
+                }
+                #endregion
+                int result = bal.langes_insert(entty);
+                if (result == 1)
+                {
+                    Bindlang();
+                }
+                else if (result == 2)
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Already Excited with given languagename');", true);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        private void GetEmpseq()
+        {
+               ViewState["empseque"] = employeeSequenceId = bal.EmpSequenceId();
+        
+        }
+        #region language adding
+        protected void Button1_Click(object sender, EventArgs e)
+
+        {
+            try
+            {
+                string languageName = ddlalan1.SelectedValue.ToString();
+                string languEcperti = ddleleveladdleng.SelectedValue.ToString();
+                AddLanguages(languageName, languEcperti);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+        protected void langrepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
+
+        {
+
+            try
+
+            {
+
+
+
+                if (e.CommandName.ToString() == "delete")
+
+                {
+                    string[] splitdata = e.CommandArgument.ToString().Split('^');
+                    int sno = Convert.ToInt16(splitdata[0].ToString());
+                    int empId = Convert.ToInt16(splitdata[1].ToString());
+                    int deoutpt = bal.Delete_Lang(sno, empId);
+
+                    Bindlang();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
     }
-    }
+}
         
     
 

@@ -7,17 +7,20 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Web.Services;
+using BAL;
 
 namespace PMS1
 {
     public partial class unassigned : System.Web.UI.Page
     {
+        Bal_connection ban_con = new Bal_connection();
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-RIBI1U4\\SQLEXPRESS;Initial Catalog=PMS v1.0;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 GridBind();
+                ddlRol();
                 //ddlBind();
             }
         }
@@ -176,7 +179,26 @@ namespace PMS1
             }
             return customers.ToArray();
         }
+        private void ddlRol()
+        {
+            try
+            {
+                DataTable ds = ban_con.RoleBind();
+                ddlselectrole.DataSource = ds;
+                ddlselectrole.DataTextField = "RoleName";
+                ddlselectrole.DataValueField = "Roleid";
+                ddlselectrole.DataBind();
+                ddlselectrole.Items.Insert(0, "-Select-");
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
 
+            }
+        }
 
     }
 }

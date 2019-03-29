@@ -208,6 +208,90 @@ namespace PMS1
                 throw ex;
             }
         }
+        protected void ddlElevel1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string languageName = txtplan1.Text;
+
+                string languEcperti = ddlElevel1.SelectedValue.ToString();
+
+                AddLanguages(languageName, languEcperti);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private void AddLanguages(string lang, string expert)
+        {
+            try
+            {
+                entty.language = lang;
+
+                entty.experties = expert;
+
+                entty.userid = Convert.ToInt32(Session["User_id"]);
+
+                #region while new employee registration condition comes adding languages for employee id
+
+                if (ViewState["Langadd"].ToString() == "1")
+                {
+                    entty.Empsequence = Convert.ToInt32(ViewState["empseque"].ToString());
+                }
+                #endregion
+                #region while update condition comes adding languages for  existing employee id
+                else if (ViewState["Langadd"].ToString() == "2")
+                {
+                    entty.Empsequence = Convert.ToInt32(ViewState["empid"].ToString());
+                }
+                #endregion
+                int result = bal.langes_insert(entty);
+                if (result == 1)
+                {
+                    Bindlang();
+                }
+                else if (result == 2)
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert(' Already Excited with given languagename');", true);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        protected void ddlExlevel2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string languageName = txtplan2.Text;
+
+                string languEcperti = ddlExlevel2.SelectedValue.ToString(); ;
+
+                AddLanguages(languageName, languEcperti);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        protected void btn_add_lang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string languageName = ddlalan1.SelectedValue.ToString();
+
+                string languEcperti = ddleleveladdleng.SelectedValue.ToString();
+
+                AddLanguages(languageName, languEcperti);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }
             
